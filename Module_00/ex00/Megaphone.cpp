@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 09:54:00 by davgalle          #+#    #+#             */
-/*   Updated: 2024/08/09 17:13:20 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/08/09 17:26:35 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main(int argc, char **argv)
 	int	j;
 
 	if (argc == 1)
-		std::cout << "I need arguments... up to you 😏" << std::endl;
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE * 😏" << std::endl;
 	else
 	{
 		i = 1;
