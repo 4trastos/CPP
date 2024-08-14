@@ -128,18 +128,3 @@ void PhoneBook::Search()
 	}
 	std::cin.ignore();
 }
-
-
-
-	/* while (flag == 0)
-	{
-		std::cout << "Insert firts name" << std::endl;
-		std::getline(std::cin, line);
-		if (line.length() == 0)
-			std::cout << "The field cannot be empty" << std::endl;
-		else
-		{
-			Contacts[i].setFirstName(line);
-			flag = 1;
-		}
-	} */
