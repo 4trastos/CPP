@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 17:36:22 by davgalle          #+#    #+#             */
-/*   Updated: 2024/08/14 11:33:17 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/08/14 12:03:51 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,23 +43,28 @@ void PhoneBook::Add()
 	while (empty < 4)
 	{
 		std::cout << "Insert firts name" << std::endl;
-		std::getline(std::cin, line);
+		if(!std::getline(std::cin, line))
+			break;
 		Contacts[i].setFirstName(line);
 	
 		std::cout << "Insert last name" << std::endl;
-		std::getline(std::cin, line);
+		if(!std::getline(std::cin, line))
+			break;
 		Contacts[i].setLastName(line);
 
 		std::cout << "Insert nickname" << std::endl;
-		std::getline(std::cin, line);
+		if(!std::getline(std::cin, line))
+			break;
 		Contacts[i].setNickname(line);
 
 		std::cout << "Insert phone number" << std::endl;
-		std::getline(std::cin, line);
+		if(!std::getline(std::cin, line))
+			break;
 		Contacts[i].setPhoneNumber(line);
 
 		std::cout << "Insert darkest Secret" << std::endl;
-		std::getline(std::cin, line);
+		if(!std::getline(std::cin, line))
+			break;
 		Contacts[i].setDarkestSecret(line);
 
 		empty = PhoneBook::Empty(Contacts[i]);
@@ -128,3 +133,4 @@ void PhoneBook::Search()
 	}
 	std::cin.ignore();
 }
+

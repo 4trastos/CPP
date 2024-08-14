@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 09:07:50 by davgalle          #+#    #+#             */
-/*   Updated: 2024/08/13 13:26:31 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/08/14 12:10:05 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@ int	main(void)
 	while (flag == 0)
 	{
 		std::cout << "Enter command -> ADD | SEARCH | EXIT" << std::endl;
-		std::getline(std::cin, prontf);
-		if (prontf == "ADD")
+		if (!std::getline(std::cin, prontf))
+			break;
+		else if (prontf == "ADD")
 			book.Add();
 		else if (prontf == "SEARCH")
 			book.Search();
