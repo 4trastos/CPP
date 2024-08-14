@@ -14,6 +14,7 @@
 
 int	main(int argc, char **argv)
 {
+	std::string str;
 	int	i;
 	int	j;
 
@@ -25,11 +26,13 @@ int	main(int argc, char **argv)
 		while (argv[i] != NULL)
 		{
 			j = 0;
-			while (argv[i][j] != '\0')
+			str = argv[i];
+			while (str[j] != '\0')
 			{
-				std::cout << (char)toupper(argv[i][j]);
+				str[j] = toupper(str[j]);
 				j++;
 			}
+			std::cout << str;
 			i++;
 		}		
 	}
