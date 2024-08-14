@@ -6,11 +6,11 @@
 #    By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/09 17:39:46 by davgalle          #+#    #+#              #
-#    Updated: 2024/08/09 17:45:56 by davgalle         ###   ########.fr        #
+#    Updated: 2024/08/13 11:20:08 by davgalle         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = PhoneBook
+NAME = phonebook
 
 CC = c++
 
@@ -18,7 +18,9 @@ CFLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address -std=c++98
 
 RM = rm -f
 
-SRC = PhoneBook.cpp
+SRC = PhoneBook.cpp \
+	Contact.cpp \
+	main.cpp
 
 OBJS = $(SRC:.cpp=.o)
 
