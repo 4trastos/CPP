@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 09:28:43 by davgalle          #+#    #+#             */
-/*   Updated: 2024/08/13 14:29:49 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/08/16 12:15:05 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void Contact::setNickname(std::string str)
 
 void Contact::setPhoneNumber(std::string str)
 {
-	this->nickname = str;
+	this->phone_number = str;
 }
 
 void Contact::setDarkestSecret(std::string str)
