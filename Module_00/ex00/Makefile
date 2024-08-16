@@ -6,11 +6,11 @@
 #    By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/09 08:58:19 by davgalle          #+#    #+#              #
-#    Updated: 2024/08/09 17:18:59 by davgalle         ###   ########.fr        #
+#    Updated: 2024/08/13 08:48:59 by davgalle         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Megaphone
+NAME = megaphone
 
 CC = c++
 
