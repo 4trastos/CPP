@@ -1,4 +1,4 @@
-# Exercise 00: BraiiiiiiinnnzzzZ
+# BraiiiiiiinnnzzzZ
 
 ## Overview
 
