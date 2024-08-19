@@ -84,7 +84,7 @@ void PhoneBook::Search()
 	int	index;
 
 	std::cout << "|----------|----------|----------|----------|" << std::endl;
-	std::cout << "|index     |first name|last name |nickname  |" << std::endl;
+	std::cout << "|     index|first name| last name|  nickname|" << std::endl;
 	std::cout << "|----------|----------|----------|----------|" << std::endl;
 	while (i < 8 && flag == 0)
 	{
@@ -93,22 +93,22 @@ void PhoneBook::Search()
 			flag = 1;
 		if (flag == 0)
 		{
-			std::cout << "|" << std::setw(10) <<std::left << i + 1;
+			std::cout << "|" << std::setw(10) << i + 1;
 
 			std::string cut_firstname = Contacts[i].getFirstName();
 			if (cut_firstname.length() > 10)
 				cut_firstname = cut_firstname.substr(0, 9) + ".";
-			std::cout << "|" << std::setw(10) << std::left << cut_firstname;
+			std::cout << "|" << std::setw(10) << cut_firstname;
 
 			std::string cut_lastname = Contacts[i].getLastName();
 			if (cut_lastname.length() > 10)
 				cut_lastname = cut_lastname.substr(0, 9) + ".";
-			std::cout << "|" << std::setw(10) << std:: left << cut_lastname;
+			std::cout << "|" << std::setw(10) << cut_lastname;
 
 			std::string cut_nickname = Contacts[i].getNickname();
 			if (cut_nickname.length() > 10)
 				cut_nickname = cut_nickname.substr(0, 9) + ".";
-			std::cout << "|" <<  std::setw(10) << std::left << cut_nickname << "|";
+			std::cout << "|" <<  std::setw(10) << cut_nickname << "|";
 			std::cout << std::endl;
 
 			book_size++;
