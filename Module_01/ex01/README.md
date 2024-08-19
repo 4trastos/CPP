@@ -10,6 +10,7 @@ The primary function you need to implement is:
 
 ```cpp
 Zombie* zombieHorde(int N, std::string name);
+'''
 
 # Zombie Horde
 
