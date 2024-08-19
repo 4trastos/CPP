@@ -1,28 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/19 11:40:42 by davgalle          #+#    #+#             */
-/*   Updated: 2024/08/19 11:40:43 by davgalle         ###   ########.fr       */
+/*   Created: 2024/08/19 11:40:05 by davgalle          #+#    #+#             */
+/*   Updated: 2024/08/19 11:40:06 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
- 
- Zombie::Zombie(std::string str)
- {
-	this->name = str;
- }
-
- Zombie::~Zombie()
- {
-	return;
- }
-
- void	Zombie::announce()
- {
-	std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
- }
