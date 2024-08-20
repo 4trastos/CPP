@@ -13,10 +13,29 @@
 #include <string>
 #include <iostream>
 #include <iomanip>
+#include <fstream>
+#include <cstdlib>
+
+int	emptyString(std::string s1, std::string s2)
+{
+	if (s1.length() == 0)
+	{
+		std::cout << "s1 empty try again" << std::endl;
+		return (1);
+	}
+	if (s2.length() == 0)
+	{
+		std::cout << "s2 empty try again" << std::endl;
+		return (1);
+	}
+	return (0);
+}
 
 void	replace(std::string file, std::string s1, std::string s2)
 {
-	
+	if (emptyString(s1, s2))
+		exit(1);
+	(void)file;
 }
 
 int main(int argc, char **argv)
