@@ -6,15 +6,15 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 13:04:17 by davgalle          #+#    #+#             */
-/*   Updated: 2024/08/19 13:26:35 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/08/20 14:30:27 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
 
-Weapon::Weapon(std::string imput)
+Weapon::Weapon(std::string type)
 {
-	this->type = imput;
+	this->type = type;
 }
 
 Weapon::~Weapon()
@@ -22,12 +22,12 @@ Weapon::~Weapon()
 	return;
 }
 
-void	Weapon::setType(std::string imput)
+void	Weapon::setType(const std::string& type)
 {
-	this->type = imput;
+	this->type = type;
 }
 
-std::string	Weapon::getType(void)
+ const std::string&	Weapon::getType(void)
 {
 	return (this->type);
 }

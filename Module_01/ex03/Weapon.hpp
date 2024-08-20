@@ -6,12 +6,12 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 13:05:03 by davgalle          #+#    #+#             */
-/*   Updated: 2024/08/19 13:33:13 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/08/20 15:47:16 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef WEAPON_HPP
-# define WEAPOON_HPP
+# define WEAPON_HPP
 
 # include <string>
 # include <iostream>
@@ -26,9 +26,9 @@ class Weapon
 		Weapon(std::string type);
 		~Weapon();
 
-		void	setType(std::string str);
+		void	setType(const std::string& type);
 
-		std::string getType(void);
+		const std::string& getType(void);
 };
 
 #endif

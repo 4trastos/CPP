@@ -6,7 +6,7 @@
 #    By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/19 12:59:54 by davgalle          #+#    #+#              #
-#    Updated: 2024/08/19 13:03:43 by davgalle         ###   ########.fr        #
+#    Updated: 2024/08/20 15:46:46 by davgalle         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CFLAGS = -Wall -Werror -Wextra -g3 -fsanitize=address -std=c++98
 
 RM = rm -f
 
-SRC = main.c \
+SRC = main.cpp \
 	Weapon.cpp \
 	HumanA.cpp \
 	HumanB.cpp

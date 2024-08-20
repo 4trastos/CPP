@@ -6,11 +6,12 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 13:03:59 by davgalle          #+#    #+#             */
-/*   Updated: 2024/08/19 13:28:38 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/08/20 15:50:23 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.cpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
 int main(int argc, char **argv)
 {
