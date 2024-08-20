@@ -20,27 +20,18 @@ int main(int argc, char **argv)
 
 	if (argc == 1)
 	{
-		std::string line = "HI THIS IS BRAIN";
-		std::string *stringPTR = &line;
-		std::string &stringREF = line;
+		std::string str = "HI THIS IS BRAIN";
+		std::string *stringPTR = &str;
+		std::string &stringREF = str;
 
-		std::cout << "The memory address of the string\n";
-		std::cout << &line << std::endl;
+		std::cout << "The memory address of the string    :" << &str << std::endl;
+		std::cout << "The memory address of the stringPTR :" << stringPTR << std::endl;
+		std::cout << "The memory address of the stringREF :" << &stringREF << std::endl;
+		std::cout << std::endl;
 
-		std::cout << "The memory address stringPTR\n";
-		std::cout << stringPTR << std::endl;
-
-		std::cout << "The memory address stringREF\n";
-		std::cout << &stringREF << std::endl;
-
-		std::cout << "The value of string\n";
-		std::cout << line << std::endl;
-
-		std::cout << "The value of stringPTR\n";
-		std::cout << *stringPTR << std::endl;
-
-		std::cout << "The value of stringREF\n";
-		std::cout << stringREF << std::endl;
+		std::cout << "The value of the string    :" << str << std::endl;
+		std::cout << "The value of the stringPTR :" << *stringPTR << std::endl;
+		std::cout << "The value of the stringREF :" << stringREF << std::endl;
 	}
 	else
 		std::cout << "This program does not need arguments" << std::endl;
