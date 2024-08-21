@@ -23,8 +23,6 @@ int main(int argc, char **argv)
 		message.complain("INFO");
 		message.complain("WARNING");
 		message.complain("ERROR");
-		message.complain("DEBUG");
-		message.complain("ERROR");
 	}
 	else
 		std::cout << "This program does not need arguments" << std::endl;
