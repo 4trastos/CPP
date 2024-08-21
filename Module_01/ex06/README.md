@@ -18,8 +18,6 @@ This is unacceptable, I want to speak to the manager now.
 $ ./harlFilter "I am not sure how tired I am today..."
 [ Probably complaining about insignificant problems ]
 ```
-# Harl Filter
-
 Although there are several ways to deal with Harl, one of the most effective is to SWITCH it off.
 
 ## Instructions
