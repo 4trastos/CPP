@@ -31,7 +31,7 @@ int	emptyString(std::string s1, std::string s2)
 	return (0);
 }
 
-void	copy(std::string s1, std::string s2, std::ifstream &file_in, std::ofstream &file_out)
+void	replace(std::string s1, std::string s2, std::ifstream &file_in, std::ofstream &file_out)
 {
 	std::string str;
 
@@ -47,7 +47,7 @@ void	copy(std::string s1, std::string s2, std::ifstream &file_in, std::ofstream 
 	}
 }
 
-void	replace(std::string file, std::string s1, std::string s2)
+void	loadFiles(std::string file, std::string s1, std::string s2)
 {
 	if (emptyString(s1, s2))
 		exit(1);
@@ -82,6 +82,6 @@ int main(int argc, char **argv)
 	if (argc != 4)
 		std::cout << "Wrong input, use -> ./replace file s1 s2" << std::endl;
 	else
-		replace(argv[1], argv[2], argv[3]);
+		loadFiles(argv[1], argv[2], argv[3]);
 	return (0);
 }
