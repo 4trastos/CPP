@@ -54,7 +54,8 @@ Create and turn in tests to show that Harl complains a lot. You can use the exam
 ```cpp
 #include "Harl.hpp"
 
-int main() {
+int main()
+{
     Harl h;
     h.complain("DEBUG");
     h.complain("INFO");
