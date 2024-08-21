@@ -6,7 +6,7 @@
 #    By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/20 15:59:23 by davgalle          #+#    #+#              #
-#    Updated: 2024/08/21 12:25:01 by davgalle         ###   ########.fr        #
+#    Updated: 2024/08/21 13:24:04 by davgalle         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,12 +18,12 @@ CFLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address -std=c++98
 
 RM = rm -f
 
-SRC = main.cpp
+SRC = main.cpp \
+	Harl.cpp
 
 OBJTS = $(SRC:.cpp=.o)
 
-all:
-	$(NAME)
+all: $(NAME)
 
 $(NAME): $(OBJTS)
 	$(CC) $(CFLAGS) -o $(NAME) $(OBJTS)
