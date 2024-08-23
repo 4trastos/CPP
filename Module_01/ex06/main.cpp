@@ -19,7 +19,9 @@ int main(int argc, char **argv)
 	else
 	{
 		Harl harl;
-		harl.complain(argv[1]);
+		std::string str = argv[1];
+
+		harl.complain(str);
 	}
 	return (0);
 }
