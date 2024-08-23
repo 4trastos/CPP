@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 11:40:17 by davgalle          #+#    #+#             */
-/*   Updated: 2024/08/19 11:40:20 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/08/23 12:19:21 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 int main(int argc, char **argv)
 {
-	Zombie foo("Foo");
 	(void)argv;
 
 	if (argc == 1)
 	{
+		Zombie foo("Foo");
 		foo.announce();
 
 		Zombie* memo = newZombie("Memo");

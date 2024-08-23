@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 12:34:35 by davgalle          #+#    #+#             */
-/*   Updated: 2024/08/19 12:53:48 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/08/20 14:18:28 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ int main(int argc, char **argv)
 		std::cout << "The memory address of the stringREF :" << &stringREF << std::endl;
 		std::cout << std::endl;
 
-		std::cout << "The value of the string    :" << str << std::endl;
-		std::cout << "The value of the stringPTR :" << *stringPTR << std::endl;
-		std::cout << "The value of the stringREF :" << stringREF << std::endl;
+		std::cout << "The value of the string             :" << str << std::endl;
+		std::cout << "The value pointed to by stringPTR   :" << *stringPTR << std::endl;
+		std::cout << "The value pointed to by stringREF   :" << stringREF << std::endl;
 	}
 	else
 		std::cout << "This program does not need arguments" << std::endl;
