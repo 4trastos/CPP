@@ -19,7 +19,7 @@
 
  Zombie::~Zombie()
  {
-	return;
+	std::cout << this->name << " return in grave" << std::endl;
  }
 
  void	Zombie::announce()
