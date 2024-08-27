@@ -9,7 +9,7 @@ class Fixed
 {
     private:
         int value;
-        static const int NOF_BITS = 8;
+        static const int FRAC_BITS = 8;
     
     public:
         Fixed();
