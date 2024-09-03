@@ -4,6 +4,7 @@
 # include <string>
 # include <iostream>
 # include <iomanip>
+# include <cmath>
 
 class Fixed
 {
