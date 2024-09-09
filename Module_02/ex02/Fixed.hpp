@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 16:45:28 by davgalle          #+#    #+#             */
-/*   Updated: 2024/09/09 13:56:05 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/09/09 16:06:50 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ class Fixed
 		Fixed(const Fixed& copy);
 		Fixed(const int int_number);
         Fixed(const float float_number);
+		Fixed& operator = (const Fixed& copy);	
 		~Fixed();
 
-		Fixed& operator = (const Fixed& copy);	
 		bool operator>(const Fixed& d) const;
 		bool operator<(const Fixed& d) const;
 		bool operator>=(const Fixed& d) const;

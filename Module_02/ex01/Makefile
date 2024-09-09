@@ -1,8 +1,20 @@
-NAME = fixed
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/09/03 15:20:23 by davgalle          #+#    #+#              #
+#    Updated: 2024/09/03 16:43:05 by davgalle         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME = Fixed
 
 CC = c++
 
-CFLAGS = -Wall -Wextra -Werror -g3 -std=c++98
+CFLAGS = -Wall -Werror -Wextra -g3 -std=c++98
 
 RM = rm -f
 
