@@ -25,7 +25,7 @@ Cuando **ClapTrap** se repara a sí mismo, recupera **<amount>** puntos de vida.
 
 En todas estas funciones miembro, debes imprimir un mensaje para describir lo que sucede. Por ejemplo, la función `attack()` puede mostrar algo como (por supuesto, sin los corchetes):
 
-ClapTrap <name> attacks <target>, causing <damage> points of damage!
+ClapTrap `<name>` attacks `<target>`, causing `<damage>` points of damage!
 
 ### Constructores y destructor
 
