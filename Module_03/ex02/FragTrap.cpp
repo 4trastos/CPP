@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 18:31:43 by davgalle          #+#    #+#             */
-/*   Updated: 2024/09/13 18:52:33 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/09/13 18:56:05 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,5 @@ FragTrap&	FragTrap::operator=(const FragTrap& copy)
 
 void	FragTrap::highFivesGuys(void)
 {
-		
+		std::cout << this->name << ": Heeeeeeyyyyyyy give me high fives!" << std::endl;
 }
