@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 18:11:39 by davgalle          #+#    #+#             */
-/*   Updated: 2024/09/11 15:29:53 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/09/13 15:12:52 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,20 @@
 
 int	main(void)
 {
-	ClapTrap someTrap("Mike");
+	ClapTrap	trap("Mike");
+	
+	trap.TrapStatus();
+	trap.attack("Bob");
 
-	someTrap.clapStat();
-	someTrap.attack("Peter");
+	trap.TrapStatus();
+	trap.takeDamage(6);
+	trap.TrapStatus();
 
-	someTrap.takeDamage(5);
-	someTrap.clapStat();
+	trap.beRepaired(3);
+	trap.TrapStatus();
 
-	someTrap.beRepaired(2);
-	someTrap.clapStat();
+	trap.attack("John");
+	trap.takeDamage(15);
 
-	someTrap.takeDamage(15);
 	return (0);
 }
