@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 18:33:01 by davgalle          #+#    #+#             */
-/*   Updated: 2024/09/13 18:33:54 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/09/16 09:41:15 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 ClapTrap::ClapTrap()
 {
-	std::cout << "Constructor Default called" << std::endl;
+	std::cout << "ClapTrap Constructor Default called" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name)

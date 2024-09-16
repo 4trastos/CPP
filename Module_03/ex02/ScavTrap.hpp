@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 18:32:43 by davgalle          #+#    #+#             */
-/*   Updated: 2024/09/13 18:33:24 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/09/16 10:00:19 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@
 class ScavTrap: public ClapTrap
 {
 	private:
-		int	gate; 
+		int	gate;
+		
 	public:
 		ScavTrap();
 		ScavTrap(const ScavTrap& copy);

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/13 15:17:11 by davgalle          #+#    #+#             */
-/*   Updated: 2024/09/16 09:38:12 by davgalle         ###   ########.fr       */
+/*   Created: 2024/09/16 09:56:42 by davgalle          #+#    #+#             */
+/*   Updated: 2024/09/16 10:03:56 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 
 # include "ClapTrap.hpp"
 
-class ScavTrap: public ClapTrap
+class ScavTrap: virtual public ClapTrap
 {
 	private:
 		int	gate;
-		
+		 
 	public:
 		ScavTrap();
 		ScavTrap(const ScavTrap& copy);

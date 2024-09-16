@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/10 18:11:59 by davgalle          #+#    #+#             */
-/*   Updated: 2024/09/13 17:03:14 by davgalle         ###   ########.fr       */
+/*   Created: 2024/09/16 09:53:26 by davgalle          #+#    #+#             */
+/*   Updated: 2024/09/16 09:53:37 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,26 @@
 
 ClapTrap::ClapTrap()
 {
-	std::cout << "Constructor Default Called" << std::endl;
+	std::cout << "ClapTrap Constructor Default called" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name)
 {
 	std::cout << "Constructor String Called" << std::endl;
 	this->name = name;
-	this->hit_points = 10;
-	this->energy_points = 10;
-	this->attack_damage = 0;
+	this->hit_points = 100;
+	this->energy_points = 50;
+	this->attack_damage = 20;
 }
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Destructor called"<< std::endl;
+	std::cout << "Destructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& copy)
 {
-	std::cout << "Copy Constuctor called" << std::endl;
+	std::cout << "Copy Constructor called" << std::endl;
 	*this = copy;
 }
 
@@ -54,7 +54,6 @@ void	ClapTrap::attack(const std::string& target)
 		std::cout << "ClapTrap " << this->name << " cannto attack to " << target;
 		std::cout << " don´t have energy points" << std::endl;
 	}
-	
 	else
 	{
 		(this->energy_points)--;
