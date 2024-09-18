@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 17:57:17 by davgalle          #+#    #+#             */
-/*   Updated: 2024/09/17 17:59:18 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/09/18 16:31:25 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Cat: public Animal
 
 		Cat(std::string type);
 
-		virtual void makeSound();
+		virtual void makeSound() const;
 };
 
 #endif

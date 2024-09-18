@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 17:02:09 by davgalle          #+#    #+#             */
-/*   Updated: 2024/09/17 17:55:52 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/09/18 16:31:50 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Dog: public Animal
 
 		Dog(std::string type);
 
-		virtual void makeSound();
+		virtual void makeSound()const;
 };
 
 #endif

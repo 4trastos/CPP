@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 18:22:34 by davgalle          #+#    #+#             */
-/*   Updated: 2024/09/18 14:30:05 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/09/18 16:32:08 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,18 @@
 WrongAnimal::WrongAnimal()
 {
 	std::cout << "Constructor WrongAnimal Default Called" << std::endl;
-	this->type = "WrongAnimal";
+	this->type = "NaN";
 }
 
 WrongAnimal::~WrongAnimal()
 {
 	std::cout << "Destuctor WrongAnimal called" << std::endl;
+}
+
+WrongAnimal::WrongAnimal(std::string type)
+{
+	std::cout << "Constructor WrongAnimal String Called" << std::endl;
+	this->type = type;
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal& copy)
@@ -42,7 +48,7 @@ std::string WrongAnimal::getType()
 	return (this->type);
 }
 
-void	WrongAnimal::makeSound()
+void	WrongAnimal::makeSound()const
 {
-	std::cout << "Ramdom Sound" << std::endl;
+	std::cout << "Buuuuuuuu!!!!" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 18:22:30 by davgalle          #+#    #+#             */
-/*   Updated: 2024/09/18 15:42:08 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/09/18 16:32:13 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,12 @@ WrongCat::~WrongCat()
 	std::cout << "Destructor WrongCat called" << std::endl;
 }
 
+WrongCat::WrongCat(std::string type)
+{
+	std::cout << "Constructor WrongCat String  called" << std::endl;
+	this->type = type;
+}
+
 WrongCat::WrongCat(const WrongCat& copy)
 {
 	std::cout << "Constructor Copy WrongCat called" << std::endl;
@@ -36,7 +42,7 @@ WrongCat& WrongCat::operator=(const WrongCat& copy)
 	return (*this);
 }
 
-void	WrongCat::makeSound()
+void	WrongCat::makeSound()const
 {
 	std:: cout << "Roarrr Roarrrrrr Roarrrrr" << std::endl;
 }

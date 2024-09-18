@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 17:02:01 by davgalle          #+#    #+#             */
-/*   Updated: 2024/09/18 15:58:34 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/09/18 16:32:22 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ Dog::Dog(const Dog& copy)
 	*this = copy;
 }
 
-void	Dog::makeSound()
+void	Dog::makeSound()const
 {
 	std::cout << "Guauuuu Guauuuuu!!!" << std::endl;
 }

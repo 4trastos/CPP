@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 17:56:15 by davgalle          #+#    #+#             */
-/*   Updated: 2024/09/18 15:57:44 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/09/18 16:32:17 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ Cat& Cat::operator=(const Cat& copy)
 	return (*this);
 }
 
-void	Cat::makeSound()
+void	Cat::makeSound()const
 {
 	std::cout << "Miauuu Miauuuu!!!" << std::endl;
 }

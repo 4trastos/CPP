@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 18:22:24 by davgalle          #+#    #+#             */
-/*   Updated: 2024/09/18 15:25:09 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/09/18 16:31:34 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,9 @@ class WrongCat: public WrongAnimal
 		WrongCat& operator=(const WrongCat& copy);
 		~WrongCat();
 
-		void	makeSound();
+		WrongCat(std::string type);
+
+		void	makeSound()const;
 };
 
 #endif

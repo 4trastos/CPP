@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 18:22:17 by davgalle          #+#    #+#             */
-/*   Updated: 2024/09/18 13:25:47 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/09/18 16:31:37 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,10 @@ class WrongAnimal
 		WrongAnimal& operator=(const WrongAnimal& copy);
 		~WrongAnimal();
 
+		WrongAnimal(std::string type);
+
 		std::string getType();
-		void	makeSound();
+		void	makeSound()const;
 };
 
 #endif
