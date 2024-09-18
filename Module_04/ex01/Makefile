@@ -6,11 +6,11 @@
 #    By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/17 11:24:41 by davgalle          #+#    #+#              #
-#    Updated: 2024/09/18 16:43:42 by davgalle         ###   ########.fr        #
+#    Updated: 2024/09/18 18:02:04 by davgalle         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Animal
+NAME = Brain
 
 CC = c++
 
