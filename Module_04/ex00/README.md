@@ -5,7 +5,7 @@ Los constructores y destructores de cada clase deben mostrar mensajes específic
 
 ## Requisitos
 
-1. Comienza implementando una clase base simple llamada **Animal**. Esta clase tiene un atributo protegido:
+1. Comienza implementando una clase base simple llamada **Animal**. Esta clase tiene un atributo protected:
    - `std::string type;`
 
 2. Implementa una clase **Dog** que herede de **Animal**.
