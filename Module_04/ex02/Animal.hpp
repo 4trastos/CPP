@@ -22,15 +22,16 @@ class Animal
 	protected:
 		std::string type;
 		Animal();
+		Animal(std::string type);
 		Animal(const Animal& copy);
-		Animal& operator=(const Animal& copy);
 	
 	public:
 		virtual ~Animal();
-		Animal(std::string type);
+		Animal& operator=(const Animal& copy);
 		std::string	getType(void);
 		virtual void makeSound()const;
 
 };
+;
 
 #endif
