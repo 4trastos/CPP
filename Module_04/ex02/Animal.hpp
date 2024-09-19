@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 13:58:18 by davgalle          #+#    #+#             */
-/*   Updated: 2024/09/19 14:29:56 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/09/19 14:54:40 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,8 @@ class Animal
 		virtual ~Animal();
 		Animal& operator=(const Animal& copy);
 		std::string	getType(void);
-		virtual void makeSound()const;
+		virtual void makeSound()const = 0;
 
 };
-;
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 14:07:05 by davgalle          #+#    #+#             */
-/*   Updated: 2024/09/18 18:10:59 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/09/19 14:53:23 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "Cat.hpp"
 #include "Brain.hpp"
 
-/* int main()
+int main()
 {
 	//Animal* meta = new Animal();
 	Animal* j = new Dog();
@@ -24,8 +24,8 @@
 	j->makeSound(); 
 	std::cout << i->getType() << " say: " << std::endl;
 	i->makeSound();
-	//std::cout << meta->getType() << " say: " << std::endl;
-	//meta->makeSound();
+	// std::cout << meta->getType() << " say: " << std::endl;
+	// meta->makeSound();
 	
 
 	delete (i);
@@ -40,9 +40,9 @@
 	//delete duck;
 	
 	return (0);
-} */
+}
 
-int main()
+/* int main()
 {
     const int numAnimals = 6;
     Animal* animals[numAnimals];
@@ -67,4 +67,4 @@ int main()
     }
 
     return 0;
-}
+} */
