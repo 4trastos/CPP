@@ -6,17 +6,18 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 14:07:05 by davgalle          #+#    #+#             */
-/*   Updated: 2024/09/20 12:12:32 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/09/20 14:13:15 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 #include "Cat.hpp"
 #include "Brain.hpp"
+#include "WrongCat.hpp"
 
-int main()
+/* int main()
 {
-	// Animal* meta = new Animal();
+	//Animal* meta = new Animal();
 	Animal* j = new Dog();
 	Animal* i = new Cat();
 
@@ -24,53 +25,44 @@ int main()
 	j->makeSound(); 
 	std::cout << i->getType() << " say: " << std::endl;
 	i->makeSound();
-	/* std::cout << meta->getType() << " say: " << std::endl;
-	meta->makeSound(); */
+	//std::cout << meta->getType() << " say: " << std::endl;
+	//meta->makeSound();
 	
 
 	delete (i);
 	delete (j);
 	// delete (meta);
 
-	/* WrongAnimal* duck = new WrongCat();
+	WrongAnimal* duck = new WrongCat();
 
 	std::cout << duck->getType() << " say: ";
 	duck->makeSound();
 
-	delete duck; */
+	delete duck;
 	
 	return (0);
-}
-
-/* int main()
-{
-    // Crear objetos individuales de Dog y Cat
-    Animal* j = new Dog();
-    Animal* i = new Cat();
-    Dog basic;
-    Dog tmp = basic;
-
-    // Establecer ideas en el brain del Cat
-    Cat* cat = dynamic_cast<Cat*>(i);
-    if (cat) {
-        cat->setBrainIdea(0, "Cazar un ratón");
-        cat->setBrainIdea(1, "Dormir en el sofá");
-        cat->setBrainIdea(99, "Esto es una mierda!!");
-        std::cout << "Idea 0 del gato: " << cat->getBrainIdea(0) << std::endl;
-        std::cout << "Idea 1 del gato: " << cat->getBrainIdea(1) << std::endl;
-        std::cout << "Idea 99 del gato: " << cat->getBrainIdea(99) << std::endl;
-    }
-
-    // Mostrar los sonidos de Dog y Cat
-    std::cout << j->getType() << " says: " << std::endl;
-    j->makeSound(); 
-    std::cout << i->getType() << " says: " << std::endl;
-    i->makeSound();
-
-    // Liberar memoria para Dog y Cat
-    delete i;
-    delete j;
-
-    return 0;
-
 } */
+
+int main()
+{
+    std::cout << "--------------Constructors--------------\n" << std::endl;
+    Dog test;
+    test.setBrainIdea(0, "Cazar un ratón");
+
+    Dog second(test);
+    
+    std::cout << "\n**********************************\n" << std::endl;
+    std::cout << "Idea de test: " << test.getBrainIdea(0) << std::endl;
+    std::cout << "Idea de second: "<< second.getBrainIdea(0) << std::endl;
+    std::cout << "\n" << std::endl;
+
+    std::cout << "Dirección de memoria de test: " << &test << std::endl;
+    std::cout << "Dirección de memoria de brain en test: " << test.getBrainAddress() << std::endl;
+    std::cout << "Dirección de memoria de second: " << &second << std::endl;
+    std::cout << "Dirección de memoria de brain en second: " << second.getBrainAddress() << std::endl;
+    std::cout << "\n**********************************\n" << std::endl;
+
+    std::cout << "--------------Destructors--------------\n" << std::endl;
+    
+    return 0;
+}

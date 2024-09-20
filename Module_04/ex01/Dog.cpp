@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 17:02:01 by davgalle          #+#    #+#             */
-/*   Updated: 2024/09/20 11:58:51 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/09/20 13:31:56 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,4 +74,9 @@ std::string Dog::getBrainIdea(int index) const
 void Dog::setBrainIdea(int index, const std::string& idea)
 {
 	this->brain->setIdea(index, idea);
+}
+
+const Brain* Dog::getBrainAddress() const
+{
+    return this->brain;
 }

@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 17:57:17 by davgalle          #+#    #+#             */
-/*   Updated: 2024/09/20 12:09:31 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/09/20 13:50:01 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ class Cat: public Animal
 		std::string getBrainIdea(int index)  const;
 		void	setBrainIdea(int index, const std::string& idea);
 		virtual void makeSound()const;
+
+		const Brain* getBrainAddress() const;
 };
 
 #endif

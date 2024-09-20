@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 13:58:06 by davgalle          #+#    #+#             */
-/*   Updated: 2024/09/18 18:07:25 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/09/20 12:24:38 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Animal::~Animal()
 
 Animal::Animal(std::string type)
 {
-	std::cout << "Constructor Animla String called" << std::endl;
+	std::cout << "Constructor Animal String called" << std::endl;
 	type = "Animal";
 }
 

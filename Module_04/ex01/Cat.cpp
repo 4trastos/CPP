@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 17:56:15 by davgalle          #+#    #+#             */
-/*   Updated: 2024/09/20 11:59:00 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/09/20 13:34:29 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,4 +74,9 @@ std::string Cat::getBrainIdea(int index) const
 void Cat::setBrainIdea(int index, const std::string& idea)
 {
 	this->brain->setIdea(index, idea);
+}
+
+const Brain* Cat::getBrainAddress() const
+{
+    return this->brain;
 }
