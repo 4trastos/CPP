@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 17:02:09 by davgalle          #+#    #+#             */
-/*   Updated: 2024/09/18 18:08:16 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/09/20 12:09:25 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ class Dog: public Animal
 
 		Dog(std::string type);
 
+		std::string getBrainIdea(int index) const;
+		void	setBrainIdea(int index, const std::string& idea);
 		virtual void makeSound()const;
 };
 

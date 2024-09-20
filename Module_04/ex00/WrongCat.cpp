@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 18:22:30 by davgalle          #+#    #+#             */
-/*   Updated: 2024/09/18 16:32:13 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/09/19 14:10:09 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,5 @@ WrongCat& WrongCat::operator=(const WrongCat& copy)
 
 void	WrongCat::makeSound()const
 {
-	std:: cout << "Roarrr Roarrrrrr Roarrrrr" << std::endl;
+	std:: cout << "Rrrrrrrr Rrrrrrr Rrrrrr" << std::endl;
 }

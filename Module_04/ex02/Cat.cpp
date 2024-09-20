@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 17:56:15 by davgalle          #+#    #+#             */
-/*   Updated: 2024/09/18 18:07:28 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/09/20 12:09:45 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ Cat& Cat::operator=(const Cat& copy)
 	std::cout << "Asigned Operator Cat called" << std::endl;
 	if (this == &copy)
 		return (*this);
-	delete [] this->brain;
 	if (copy.brain)
 	{
 		this->brain = new Brain();
@@ -65,4 +64,14 @@ Cat& Cat::operator=(const Cat& copy)
 void	Cat::makeSound()const
 {
 	std::cout << "Miauuu Miauuuu!!!" << std::endl;
+}
+
+std::string Cat::getBrainIdea(int index) const
+{
+	return (this->brain->getIdea(index));
+}
+
+void Cat::setBrainIdea(int index, const std::string& idea)
+{
+	this->brain->setIdea(index, idea);
 }

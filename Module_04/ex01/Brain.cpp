@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 16:42:48 by davgalle          #+#    #+#             */
-/*   Updated: 2024/09/18 16:58:44 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/09/19 16:59:00 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,17 @@ Brain&	Brain::operator=(const Brain& copy)
 		for (int i = 0; i < 100; i++)
 			this->ideas[i] = copy.ideas[i];
 	return (*this);
+}
+
+std::string	Brain::getIdea(int index)
+{
+	if (index >= 0 && index < 100)
+		return (this->ideas[index]);
+	return "";
+}
+
+void	Brain::setIdea(int index, const std::string& idea)
+{
+	if (index >= 0 && index < 100)
+		ideas[index] = idea;
 }

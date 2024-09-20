@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 17:02:01 by davgalle          #+#    #+#             */
-/*   Updated: 2024/09/18 18:07:34 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/09/20 11:58:51 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ Dog& Dog::operator=(const Dog& copy)
 	std::cout << "Operator Asigned Dog called" << std::endl;
 	if (this == &copy)
 		return (*this);
-	delete [] this->brain;
 	if (copy.brain)
 	{
 		this->brain = new Brain();
@@ -62,8 +61,17 @@ Dog& Dog::operator=(const Dog& copy)
 	return (*this);
 }
 
-
 void	Dog::makeSound()const
 {
 	std::cout << "Guauuuu Guauuuuu!!!" << std::endl;
+}
+
+std::string Dog::getBrainIdea(int index) const
+{
+	return (this->brain->getIdea(index));
+}
+
+void Dog::setBrainIdea(int index, const std::string& idea)
+{
+	this->brain->setIdea(index, idea);
 }

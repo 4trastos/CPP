@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 14:07:05 by davgalle          #+#    #+#             */
-/*   Updated: 2024/09/18 18:10:59 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/09/20 11:55:05 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,27 +44,33 @@
 
 int main()
 {
-    const int numAnimals = 6;
-    Animal* animals[numAnimals];
+    // Crear objetos individuales de Dog y Cat
+    Animal* j = new Dog();
+    Animal* i = new Cat();
+    Dog basic;
+    Dog tmp = basic;
 
-    // Llenar el array con objetos Dog y Cat
-    for (int i = 0; i < numAnimals; ++i) {
-        if (i < numAnimals / 2) {
-            animals[i] = new Dog(); // La primera mitad del array contiene Dogs
-        } else {
-            animals[i] = new Cat(); // La segunda mitad del array contiene Cats
-        }
+    // Establecer ideas en el brain del Cat
+    Cat* cat = dynamic_cast<Cat*>(i);
+    if (cat) {
+        cat->setBrainIdea(0, "Cazar un ratón");
+        cat->setBrainIdea(1, "Dormir en el sofá");
+        cat->setBrainIdea(99, "Esto es una mierda!!");
+        std::cout << "Idea 0 del gato: " << cat->getBrainIdea(0) << std::endl;
+        std::cout << "Idea 1 del gato: " << cat->getBrainIdea(1) << std::endl;
+        std::cout << "Idea 99 del gato: " << cat->getBrainIdea(99) << std::endl;
     }
 
-    // Hacer que cada animal haga un sonido
-    for (int i = 0; i < numAnimals; ++i) {
-        std::cout << animals[i]->getType() << " says: ";
-        animals[i]->makeSound();
-    }
+    // Mostrar los sonidos de Dog y Cat
+    std::cout << j->getType() << " says: " << std::endl;
+    j->makeSound(); 
+    std::cout << i->getType() << " says: " << std::endl;
+    i->makeSound();
 
-    for (int i = 0; i < numAnimals; ++i) {
-        delete animals[i];
-    }
+    // Liberar memoria para Dog y Cat
+    delete i;
+    delete j;
 
     return 0;
+
 }

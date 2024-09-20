@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 16:42:57 by davgalle          #+#    #+#             */
-/*   Updated: 2024/09/18 16:46:56 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/09/20 12:08:13 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,9 @@ class Brain
 		Brain(const Brain& copy);
 		Brain& operator=(const Brain& copy);
 		~Brain();
+
+		void setIdea(int index, const std::string& idea);
+		std::string getIdea(int index);
 };
 
 
