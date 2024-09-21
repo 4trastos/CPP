@@ -27,10 +27,11 @@ Si el grado del burócrata es demasiado bajo, se lanzará una excepción **Form:
 
 ### Función signForm():
 Por último, añade una función miembro **signForm()** al **Bureaucrat**. Si el formulario se firma, imprimirá algo como:
+
 `<bureaucrat> firmó <form>`
-```
+
 De lo contrario, imprimirá algo como:
-```
+
 ` <bureaucrat> no pudo firmar <form> porque <razón>`
 
 ### Tests:
