@@ -22,10 +22,12 @@ Bureaucrat::~Bureaucrat()
 	std::cout << "Destructor Bureaucrat called" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat& copy)
+Bureaucrat::Bureaucrat(const Bureaucrat& copy)  : name(copy.name), grade(copy.grade)
 {
-	std::cout << "Bureaucrat Copy called" << std::endl;
-	*this = copy;
+	if (this->grade < 1)
+		throw Bureaucrat::GradeTooLowException();
+	else if (this->grade > 150)
+		throw Bureaucrat::GradeTooHighException();
 }
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& copy)
