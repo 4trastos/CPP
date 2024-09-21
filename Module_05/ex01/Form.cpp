@@ -6,13 +6,13 @@
 /*   By: usuario <usuario@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 10:49:09 by usuario           #+#    #+#             */
-/*   Updated: 2024/09/21 12:33:10 by usuario          ###   ########.fr       */
+/*   Updated: 2024/09/21 12:58:13 by usuario          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form(): name(""), gradeSign(0), gradeExecute(0), indicatesSigned(false) {}
+Form::Form(): name(""), indicatesSigned(false), gradeSign(0), gradeExecute(0) {}
 
 Form::~Form()
 {
@@ -29,8 +29,8 @@ Form::Form(const std::string& name, int gradeSign, int gradeExecute):
 		throw Bureaucrat::GradeTooHighException();
 }
 
-Form::Form(const Form& copy): name(copy.name), gradeSign(copy.gradeSign),
-            gradeExecute(copy.gradeExecute), indicatesSigned(copy.indicatesSigned)
+Form::Form(const Form& copy): name(copy.name), indicatesSigned(copy.indicatesSigned), 
+			gradeSign(copy.gradeSign), gradeExecute(copy.gradeExecute)
 {
     std::cout << "Copy Form called" << std::endl;
     if (gradeSign < 1 || gradeExecute < 1) 
@@ -76,7 +76,7 @@ const char *Form::GradeTooLowException::what() const throw()
 	return ("Error: Grade too low!");
 }
 
-void	Form::beSigned(const Bureaucrat& bureaucrat) const
+void	Form::beSigned(const Bureaucrat& bureaucrat)
 {
 	if (bureaucrat.getGrade() <= this->gradeSign)
 		this->indicatesSigned = true;

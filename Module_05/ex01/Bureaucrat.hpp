@@ -6,7 +6,7 @@
 /*   By: usuario <usuario@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 10:20:09 by usuario           #+#    #+#             */
-/*   Updated: 2024/09/21 12:33:35 by usuario          ###   ########.fr       */
+/*   Updated: 2024/09/21 12:58:46 by usuario          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <iostream>
 # include "Form.hpp"
 
-class From;
+class Form;
 
 class Bureaucrat
 {
@@ -39,7 +39,7 @@ class Bureaucrat
 		const std::string getName(void) const;
 		int			getGrade(void) const;
 
-        void    signForm(const Form& form) const;   
+        void    signForm(Form& form);   
 
 		class GradeTooHighException : public std::exception
 		{

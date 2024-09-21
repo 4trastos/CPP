@@ -6,7 +6,7 @@
 /*   By: usuario <usuario@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 10:19:25 by usuario           #+#    #+#             */
-/*   Updated: 2024/09/21 12:33:41 by usuario          ###   ########.fr       */
+/*   Updated: 2024/09/21 12:55:10 by usuario          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void    Bureaucrat::decrementGrade()
         throw Bureaucrat::GradeTooLowException();
 }
 
-void    Bureaucrat::signForm(const Form& form) const
+void    Bureaucrat::signForm(Form& form)
 {
     try
     {

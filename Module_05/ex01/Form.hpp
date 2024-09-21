@@ -6,7 +6,7 @@
 /*   By: usuario <usuario@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 10:49:18 by usuario           #+#    #+#             */
-/*   Updated: 2024/09/21 12:32:32 by usuario          ###   ########.fr       */
+/*   Updated: 2024/09/21 12:51:18 by usuario          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ class Form
         int		getGradeSign() const;
         int		getGradeExecute() const;
 
-        void    beSigned(const Bureaucrat& bureaucrat) const;
+        void    beSigned(const Bureaucrat& bureaucrat);
 
         class GradeTooHighException: public std::exception
         {
