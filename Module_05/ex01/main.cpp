@@ -5,71 +5,84 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: usuario <usuario@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/21 08:52:43 by usuario           #+#    #+#             */
-/*   Updated: 2024/09/21 10:15:48 by usuario          ###   ########.fr       */
+/*   Created: 2024/09/21 10:18:56 by usuario           #+#    #+#             */
+/*   Updated: 2024/09/21 12:08:33 by usuario          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main()
 {
-    Bureaucrat peter("Peter", 55);
-	std::cout << peter << std::endl;
+    try
+	{
+		Form	a("A", 0, 1);
+	}
+	catch (std::exception &e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	std::cout << "===============================" << std::endl;
 
-	peter.incrementGrade();
-	std::cout << peter << std::endl;
-	peter.decrementGrade();
-	std::cout << peter << std::endl;
+	try
+	{
+		Form b("B", 1, 0);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	std::cout << "===============================" << std::endl;
 
-	std::cout << "\n******** LOW GRADE TEST *********\n" << std::endl;
 	try
 	{
-		Bureaucrat jhon("Jhon", 0);
-		std::cout << jhon << std::endl;
+		Form	c("C", 1, 151);
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
 	}
-	
-	std::cout << "\n******** HI GRADE TEST *********\n" << std::endl;
-	try
-	{
-		Bureaucrat marco("Marco", 157);
-		std::cout << marco << std::endl;
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	
-	std::cout << "\n******** INCREMENT TEST *********\n" << std::endl;
-	try
-	{
-		Bureaucrat axl("Axl", 150);
-		std::cout << axl << std::endl;
-		axl.incrementGrade();
-		std::cout << axl << std::endl;
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	
-	std::cout << "\n******** DECREMENT TEST *********\n" << std::endl;
-	try
-	{
-		Bureaucrat axl("Axl", 2);
-		std::cout << axl << std::endl;
-		axl.decrementGrade();
-		std::cout << axl << std::endl;
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	
+	std::cout << "===============================" << std::endl;
 
-	return (0);
+	try
+	{
+		Form	d("D", 151, 1);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	std::cout << "===============================" << std::endl;
+
+	try
+	{
+		Bureaucrat	mitchel = Bureaucrat("Mitchel", 1);
+		Form		e("E", 150, 150);
+
+		std::cout << e << '\n';
+		mitchel.signForm(e);
+		std::cout << e << '\n';
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	std::cout << "===============================" << std::endl;
+
+	try
+	{
+		Bureaucrat	mike = Bureaucrat("Mike", 50);
+		Form		f("F", 1, 1);
+
+		std::cout << f << '\n';
+		mike.signForm(f);
+		std::cout << f << '\n';
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+
+	return 0;
 }
