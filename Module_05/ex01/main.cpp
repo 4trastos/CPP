@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 10:18:56 by usuario           #+#    #+#             */
-/*   Updated: 2024/09/30 16:53:31 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/10/01 14:08:59 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,74 +15,35 @@
 
 int main()
 {
-    try
-	{
-		Form	a("A", 0, 1);
-	}
-	catch (std::exception &e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	std::cout << "******************************\n" << std::endl;
-
 	try
 	{
-		Form b("B", 1, 0);
+		Bureaucrat dave("Dave", 23);
+		Form	a("28b", 24, 23);
+		std::cout << dave << std::endl;
+		std::cout << a << std::endl;
+		dave.signForm(a);
+		std::cout << a << std::endl;
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
 	}
-	std::cout << "******************************\n" << std::endl;
 
-	try
-	{
-		Form	c("C", 1, 151);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	std::cout << "******************************\n" << std::endl;
-
-	try
-	{
-		Form	d("D", 151, 1);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	std::cout << "******************************\n" << std::endl;
-
-	try
-	{
-		Bureaucrat	mitchel = Bureaucrat("Mitchel", 1);
-		Form		e("E", 150, 150);
-
-		std::cout << e << '\n';
-		mitchel.signForm(e);
-		std::cout << e << '\n';
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	std::cout << "******************************\n" << std::endl;
+	std::cout << "\nXXXXXXXXXXXXXXXXXXXXXXXXXX\n" << std::endl;
 
 	try
 	{
 		Bureaucrat	mike = Bureaucrat("Mike", 50);
-		Form		f("F", 1, 1);
+		Form		f("27a", 1, 1);
 
-		std::cout << f << '\n';
+		std::cout << f << std::endl;
 		mike.signForm(f);
-		std::cout << f << '\n';
+		std::cout << f << std::endl;
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
-	}
+	}	
 
-	return 0;
+	return (0);
 }

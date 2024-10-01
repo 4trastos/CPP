@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 10:18:56 by usuario           #+#    #+#             */
-/*   Updated: 2024/10/01 13:36:50 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/10/01 15:16:00 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 int main()
 {
-    Intern Tom;
+	Intern Tom;
 
 	AForm	*form1;
 	form1 = Tom.makeForm("Form which is differ from ours", "Paul");
@@ -36,4 +36,6 @@ int main()
 	AForm	*form4;
 	form4 = Tom.makeForm("PresidentialPardonForm", "Alex");
 	delete form4;
+	
+	return (0);
 }

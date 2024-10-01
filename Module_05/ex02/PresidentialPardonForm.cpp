@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 17:05:04 by davgalle          #+#    #+#             */
-/*   Updated: 2024/10/01 11:01:21 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/10/01 16:13:52 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ PresidentialPardonForm::PresidentialPardonForm(const std::string& target):
 void PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
 	if (this->getIndicatesSigned() == false)
-		throw "The form is not signed";
+		throw "The form is not signed and cannot be executed ";
 	else if (executor.getGrade() > this->getGradeSign())
 		throw GradeTooLowException();
 	std::cout << this->getTarget() << "has been pardoned by Zaphod Beeblebrox" << std::endl;

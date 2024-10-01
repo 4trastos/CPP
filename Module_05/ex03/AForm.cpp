@@ -6,13 +6,13 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 10:49:09 by usuario           #+#    #+#             */
-/*   Updated: 2024/10/01 11:48:37 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/10/01 15:43:35 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
 
-AForm::AForm(): name(""), indicatesSigned(false), gradeSign(0), gradeExecute(0) {}
+AForm::AForm(): name(""), indicatesSigned(false), gradeSign(0), gradeExecute(0), target("") {}
 
 AForm::~AForm()
 {

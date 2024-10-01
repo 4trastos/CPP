@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 10:19:25 by usuario           #+#    #+#             */
-/*   Updated: 2024/10/01 11:48:19 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/10/01 16:24:26 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,8 @@ void    Bureaucrat::signForm(AForm& form)
 {
     try
     {
-		form.beSigned(*this);
 		std::cout << this->name << " sign " << form.getName() << std::endl;
+		form.beSigned(*this);
 	}
     catch(const std::exception& e)
     {
@@ -106,8 +106,9 @@ void    Bureaucrat::executeForm(AForm const & form)
 {
     try
     {
+        if (form.getIndicatesSigned() == true)
+            std::cout << this->name << " executed " << form.getName() << std::endl;
         form.execute(*this);
-        std::cout << this->name << " executed " << form.getName() << std::endl;
     }
     catch(const std::exception& e)
     {   
