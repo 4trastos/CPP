@@ -3,21 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: usuario <usuario@student.42.fr>            +#+  +:+       +#+        */
+/*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 09:14:21 by usuario           #+#    #+#             */
-/*   Updated: 2024/09/21 11:36:56 by usuario          ###   ########.fr       */
+/*   Updated: 2024/09/30 16:52:32 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() {}
+Bureaucrat::Bureaucrat()
+{
+    std::cout << "Construtor Bureaucrat Default called" << std::endl;
+}
 
-Bureaucrat::~Bureaucrat() {}
+Bureaucrat::~Bureaucrat()
+{
+    std::cout << "Destrutor Bureaucrat called" << std::endl;
+}
 
 Bureaucrat::Bureaucrat(const Bureaucrat& copy) : name(copy.name), grade(copy.grade)
 {
+    std::cout << "Copy Bureaucrat called" << std::endl;
     if (this->grade < 1)
         throw Bureaucrat::GradeTooLowException();
     else if (this->grade > 150)
@@ -26,12 +33,14 @@ Bureaucrat::Bureaucrat(const Bureaucrat& copy) : name(copy.name), grade(copy.gra
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& copy)
 {
+    std::cout << "Assigened Bureaucrat called" << std::endl;
     this->grade = copy.grade;
     return (*this);    
 }
 
 Bureaucrat::Bureaucrat(const std::string& name, int grade): name(name), grade(grade)
 {
+    std::cout << "Constructor Bureaucrat Speial called" << std::endl;
     if (this->grade < 1)
         throw Bureaucrat::GradeTooLowException();
     else if (this->grade > 150)

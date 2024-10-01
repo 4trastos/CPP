@@ -6,11 +6,11 @@
 #    By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/21 10:19:38 by usuario           #+#    #+#              #
-#    Updated: 2024/09/22 14:23:52 by davgalle         ###   ########.fr        #
+#    Updated: 2024/10/01 12:53:43 by davgalle         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Form
+NAME = Bureaucrat
 
 CC = c++
 
@@ -20,8 +20,12 @@ RM = rm -f
 
 SRC = main.cpp \
 	Bureaucrat.cpp \
-	Form.cpp
-
+	AForm.cpp \
+	ShrubberyCreationForm.cpp \
+	RobotomyRequestForm.cpp \
+	PresidentialPardonForm.cpp \
+	Intern.cpp
+	
 OBJTS = $(SRC:.cpp=.o)
 
 $(NAME): $(OBJTS)

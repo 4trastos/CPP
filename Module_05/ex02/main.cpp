@@ -3,86 +3,103 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: usuario <usuario@student.42.fr>            +#+  +:+       +#+        */
+/*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 10:18:56 by usuario           #+#    #+#             */
-/*   Updated: 2024/09/21 12:08:33 by usuario          ###   ########.fr       */
+/*   Updated: 2024/10/01 12:42:58 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int main()
 {
-    try
-	{
-		Form	a("A", 0, 1);
-	}
-	catch (std::exception &e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	std::cout << "===============================" << std::endl;
+    Bureaucrat mike("Mike", 1);
+	Bureaucrat peter("Peter", 145);
+	Bureaucrat george("George", 18);
 
+
+	std::cout << "\n+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-" << std::endl;
 	try
 	{
-		Form b("B", 1, 0);
+		PresidentialPardonForm a("28A ");
+		a.execute(mike);
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
 	}
-	std::cout << "===============================" << std::endl;
-
-	try
+	catch(const char* e)
 	{
-		Form	c("C", 1, 151);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	std::cout << "===============================" << std::endl;
-
-	try
-	{
-		Form	d("D", 151, 1);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	std::cout << "===============================" << std::endl;
-
-	try
-	{
-		Bureaucrat	mitchel = Bureaucrat("Mitchel", 1);
-		Form		e("E", 150, 150);
-
-		std::cout << e << '\n';
-		mitchel.signForm(e);
 		std::cout << e << '\n';
 	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	std::cout << "===============================" << std::endl;
+	
+	std::cout << "\n+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-" << std::endl;
 
 	try
 	{
-		Bureaucrat	mike = Bureaucrat("Mike", 50);
-		Form		f("F", 1, 1);
-
-		std::cout << f << '\n';
-		mike.signForm(f);
-		std::cout << f << '\n';
+		PresidentialPardonForm b("28B ");
+		b.beSigned(mike);
+		b.execute(mike);
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
 	}
+	catch(const char* e)
+	{
+		std::cout << e << '\n';
+	}
+	
+	std::cout << "\n*****************************" << std::endl;
 
-	return 0;
+	try
+	{
+		RobotomyRequestForm c("28C ");
+		c.beSigned(george);
+		c.execute(george);
+		std::cout << "===============================" << std::endl;
+		c.execute(george);
+		std::cout << "===============================" << std::endl;
+		c.execute(george);
+		std::cout << "===============================" << std::endl;
+		c.execute(george);
+		std::cout << "===============================" << std::endl;
+		c.execute(george);
+		std::cout << "===============================" << std::endl;
+		c.execute(george);
+		std::cout << "===============================" << std::endl;
+		c.execute(george);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	catch (const char* e)
+	{
+		std::cout << e << '\n';
+	}
+	
+	std::cout << "=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=" << std::endl;
+
+	try
+	{
+		ShrubberyCreationForm d("28D ");
+		d.beSigned(peter);
+		d.execute(peter);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	catch (const char* e)
+	{
+		std::cout << e << '\n';
+	}
+
+	std::cout << "\n*****************************" << std::endl;
 }

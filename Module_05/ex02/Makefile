@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: usuario <usuario@student.42.fr>            +#+  +:+       +#+         #
+#    By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/21 10:19:38 by usuario           #+#    #+#              #
-#    Updated: 2024/09/21 12:08:08 by usuario          ###   ########.fr        #
+#    Updated: 2024/09/30 17:06:43 by davgalle         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Form
+NAME = Bureaucrat
 
 CC = c++
 
@@ -20,7 +20,11 @@ RM = rm -f
 
 SRC = main.cpp \
 	Bureaucrat.cpp \
-	Form.cpp
+	AForm.cpp \
+	ShrubberyCreationForm.cpp \
+	RobotomyRequestForm.cpp \
+	PresidentialPardonForm.cpp \
+	
 
 OBJTS = $(SRC:.cpp=.o)
 
