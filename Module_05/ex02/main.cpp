@@ -18,9 +18,9 @@
 
 int main()
 {
-    Bureaucrat mike("Mike", 1);
+ 	Bureaucrat mike("Mike", 25);
+	Bureaucrat george("George", 72);
 	Bureaucrat peter("Peter", 145);
-	Bureaucrat george("George", 18);
 
 
 	std::cout << "\n+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-" << std::endl;
@@ -45,6 +45,7 @@ int main()
 		PresidentialPardonForm b("28B ");
 		b.beSigned(mike);
 		b.execute(mike);
+		std::cout << b << std::endl;
 	}
 	catch(const std::exception& e)
 	{
@@ -61,6 +62,7 @@ int main()
 	{
 		RobotomyRequestForm c("28C ");
 		c.beSigned(george);
+		std::cout << c << std::endl;
 		c.execute(george);
 		std::cout << "===============================" << std::endl;
 		c.execute(george);
@@ -90,6 +92,7 @@ int main()
 	{
 		ShrubberyCreationForm d("28D ");
 		d.beSigned(peter);
+		std::cout << d << '\n';
 		d.execute(peter);
 	}
 	catch(const std::exception& e)
