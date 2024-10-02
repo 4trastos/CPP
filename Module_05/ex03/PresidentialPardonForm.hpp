@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 17:05:19 by davgalle          #+#    #+#             */
-/*   Updated: 2024/10/01 10:52:35 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/10/01 18:45:38 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 
 class PresidentialPardonForm : public AForm
 {
+	private:
+		std::string target;
+		
 	public:
 		PresidentialPardonForm();
 		PresidentialPardonForm(const PresidentialPardonForm& copy);

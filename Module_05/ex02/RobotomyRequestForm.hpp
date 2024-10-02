@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 17:04:47 by davgalle          #+#    #+#             */
-/*   Updated: 2024/10/01 10:42:50 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/10/01 18:19:41 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@
 
 class RobotomyRequestForm : public AForm
 {
+	private:
+		std::string target;
+		
 	public:
 		RobotomyRequestForm();
 		RobotomyRequestForm(const RobotomyRequestForm& copy);

@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 17:03:35 by davgalle          #+#    #+#             */
-/*   Updated: 2024/10/01 11:31:46 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/10/01 18:47:44 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,21 @@ ShrubberyCreationForm::ShrubberyCreationForm() {}
 ShrubberyCreationForm::~ShrubberyCreationForm() {}
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string& target) :
-		AForm("ShrubberyCreationForm", 145, 137, target) {}
-
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& copy)
+		AForm("ShrubberyCreationForm", 145, 137)
 {
-	(void)copy;
+	this->target = target;
+}
+
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& copy) :
+	AForm(copy.getName(), 145, 137)
+{
+	std::cout << "Shrubbery copy called" << std::endl;
+	*this = copy;
 }
 
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& copy)
 {
-	(void)copy;
+	this->target = copy.target;
 	return (*this);
 }
 
@@ -39,7 +44,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 		throw GradeTooLowException();
 	
 	std::ofstream file_out;
-	std::string file = this->getTarget() + "_shrubbery";
+	std::string file = this->target + "_shrubbery";
 
 	file_out.open(file.c_str());
 	if (!file_out)

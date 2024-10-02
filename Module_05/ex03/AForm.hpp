@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 10:49:18 by usuario           #+#    #+#             */
-/*   Updated: 2024/10/01 11:05:38 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/10/01 18:48:36 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ class AForm
         bool	indicatesSigned;
         const int   gradeSign;
         const int   gradeExecute;
-        const std::string target;
         
     public:
         AForm();
@@ -32,10 +31,8 @@ class AForm
         AForm& operator=(const AForm& copy);
         virtual ~AForm();
 
-        AForm(const std::string& name, int gradeSign, int gradeExecute,
-                const std::string& target);
+        AForm(const std::string& name, int gradeSign, int gradeExecute);
         const std::string getName() const;
-        const std::string getTarget() const;
         bool	getIndicatesSigned() const;
         int		getGradeSign() const;
         int		getGradeExecute() const;

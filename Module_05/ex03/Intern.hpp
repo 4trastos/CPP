@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 12:48:11 by davgalle          #+#    #+#             */
-/*   Updated: 2024/10/01 12:56:57 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/10/01 19:04:18 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ class Intern
 		~Intern();
 
 		AForm	*makeForm(std::string FormName, std::string FormTarget);
-		AForm	*newShrubberyCreationForm(const std::string& target);
-		AForm	*newRobotomyRequestForm(const std::string& target);
-		AForm	*newPresidentialPardonForm(const std::string& target);
+		AForm	*newShrubberyCreationForm(const std::string& FormTarget);
+		AForm	*newRobotomyRequestForm(const std::string& FormTarget);
+		AForm	*newPresidentialPardonForm(const std::string& FormTarget);
 };
 
 #endif

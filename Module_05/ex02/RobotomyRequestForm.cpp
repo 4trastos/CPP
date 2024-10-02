@@ -6,29 +6,40 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 17:04:23 by davgalle          #+#    #+#             */
-/*   Updated: 2024/10/01 11:32:21 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/10/02 12:35:34 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm() {}
-
-RobotomyRequestForm::~RobotomyRequestForm() {}
-
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& copy)
+RobotomyRequestForm::RobotomyRequestForm()
 {
-	(void)copy;
+	std::cout << "Constructor RobotomyRequestForm default called" << std::endl;
+}
+
+RobotomyRequestForm::~RobotomyRequestForm()
+{
+	std::cout << "Destructor RobotomyRequestForm default called" << std::endl;
+}
+
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& copy):
+		AForm(copy.getName(), 72, 45)
+{
+	std::cout << "Robotomy copy called" << std::endl;
+	*this = copy;
 }
 
 RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& copy)
 {
-	(void)copy;
+	this->target = copy.target;
 	return (*this);
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string& target):
-		AForm("RobotomyRequestForm", 72, 45, target) {}
+		AForm("RobotomyRequestForm", 72, 45)
+{
+	this->target = target;
+}
 
 void	RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
@@ -40,12 +51,12 @@ void	RobotomyRequestForm::execute(Bureaucrat const & executor) const
 	std::cout << "Rrrrrrrrrrrrrrrrrrrrrrrrrrrr..." << std::endl;
 	if (rand() % 2 == 0)
 	{
-		std::cout << this->getTarget() << " has been robotomized successfully 50";
+		std::cout << this->target << " has been robotomized successfully 50";
 		std::cout << " percent of the time." << std::endl;
 	}
 	else
 	{
-		std::cout << this->getTarget() << " has not been robotomized successfully";
+		std::cout << this->target << " has not been robotomized successfully";
 		std::cout << " so it's failure" << std::endl;
 	}
 }

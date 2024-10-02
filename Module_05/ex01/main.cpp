@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 10:18:56 by usuario           #+#    #+#             */
-/*   Updated: 2024/10/01 14:08:59 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/10/01 18:37:46 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,11 @@ int main()
 	try
 	{
 		Bureaucrat dave("Dave", 23);
+		Bureaucrat alex(dave);
 		Form	a("28b", 24, 23);
-		std::cout << dave << std::endl;
+		std::cout << alex << std::endl;
 		std::cout << a << std::endl;
-		dave.signForm(a);
+		alex.signForm(a);
 		std::cout << a << std::endl;
 	}
 	catch(const std::exception& e)

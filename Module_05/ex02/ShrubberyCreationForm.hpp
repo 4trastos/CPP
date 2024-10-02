@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 17:03:29 by davgalle          #+#    #+#             */
-/*   Updated: 2024/09/30 17:28:33 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/10/01 18:20:12 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 
 class ShrubberyCreationForm : public AForm
 {
+	private:
+		std::string target;
+		
 	public:
 		ShrubberyCreationForm();
 		ShrubberyCreationForm(const ShrubberyCreationForm& copy);

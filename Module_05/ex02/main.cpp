@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 10:18:56 by usuario           #+#    #+#             */
-/*   Updated: 2024/10/01 16:33:29 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/10/01 18:34:01 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,11 @@ int main()
 	try
 	{
 		PresidentialPardonForm a("28A ");
-		mike.signForm(a);
+		PresidentialPardonForm x(a);
+		mike.signForm(x);
 		//a.beSigned(mike);
 		//std::cout << a << std::endl;
-		mike.executeForm(a);
+		mike.executeForm(x);
 		std::cout << mike << std::endl;
 	}
 	catch(const std::exception& e)
@@ -46,7 +47,7 @@ int main()
 	try
 	{
 		PresidentialPardonForm b("28B ");
-		//mike.signForm(b);
+		mike.signForm(b);
 		mike.executeForm(b);
 		std::cout << b << std::endl;
 	}
@@ -60,7 +61,7 @@ int main()
 	}
 	
 	std::cout << "\n*****************************" << std::endl;
-
+	std::srand(static_cast<unsigned int>(std::time(0)));
 	try
 	{
 		RobotomyRequestForm c("28C ");

@@ -6,28 +6,39 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 17:03:35 by davgalle          #+#    #+#             */
-/*   Updated: 2024/10/01 11:31:46 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/10/02 12:50:29 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "ShrubberyCreationForm.hpp"
 # include <fstream>
 
-ShrubberyCreationForm::ShrubberyCreationForm() {}
+ShrubberyCreationForm::ShrubberyCreationForm()
+{
+	std::cout << "Constructor ShrubberyCreationForm default called" << std::endl;
+}
 
-ShrubberyCreationForm::~ShrubberyCreationForm() {}
+ShrubberyCreationForm::~ShrubberyCreationForm()
+{
+	std::cout << "Destructor ShrubberyCreationForm default called" << std::endl;
+}
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string& target) :
-		AForm("ShrubberyCreationForm", 145, 137, target) {}
-
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& copy)
+		AForm("ShrubberyCreationForm", 145, 137)
 {
-	(void)copy;
+	this->target = target;
+}
+
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& copy) :
+	AForm(copy.getName(), 145, 137)
+{
+	std::cout << "Shrubbery copy called" << std::endl;
+	*this = copy;
 }
 
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& copy)
 {
-	(void)copy;
+	this->target = copy.target;
 	return (*this);
 }
 
@@ -39,7 +50,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 		throw GradeTooLowException();
 	
 	std::ofstream file_out;
-	std::string file = this->getTarget() + "_shrubbery";
+	std::string file = this->target + "_shrubbery";
 
 	file_out.open(file.c_str());
 	if (!file_out)
@@ -48,15 +59,20 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 	}
 	else
 	{
-		file_out << "        _-_\n";
-        file_out << "     /~~   ~~\\\n";
-        file_out << "  /~~         ~~\\\n";
-        file_out << " {               }\n";
-        file_out << "  \\  _-     -_  /\n";
-        file_out << "    ~  \\ //  ~\n";
-        file_out << " _- -   | | _- _\n";
-        file_out << "   _ -  | |   -_\n";
-        file_out << "       // \\\\\n";
+		file_out << "                            \n";
+		file_out << "          &&& &&  & &&\n";
+		file_out << "      && &\\/&\\|() ()/ @ \n";
+		file_out << "      &\\/(/&/&||/& /_/)_&\n";
+		file_out << "   &() &\\/&|()|/&\\/ '%\" &\n";
+		file_out << "   &_\\_&&_\\ |& |&&/&__%_&\n";
+		file_out << "&&   && & &| &| /& & % ()& /&&\n";
+		file_out << " ()&_---()&\\&\\|&&-&&--%---()~\n";
+		file_out << "     &&     \\|||         \n";
+		file_out << "             |||         \n";
+		file_out << "             |||         \n";
+		file_out << "             |||         \n";
+		file_out << "       , -=-~  .-^- _    \n";
+		file_out << "                            \n";
 	}
 	file_out.close();
 }

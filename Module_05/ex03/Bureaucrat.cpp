@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 10:19:25 by usuario           #+#    #+#             */
-/*   Updated: 2024/10/01 16:24:26 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/10/02 12:32:22 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 
 Bureaucrat::Bureaucrat()
 {
-    //std::cout << "Constructor Bureaucrat default called" << std::endl;
+    std::cout << "Constructor Bureaucrat default called" << std::endl;
 }
 
 Bureaucrat::~Bureaucrat()
 {
-	//std::cout << "Destructor Bureaucrat called" << std::endl;
+	std::cout << "Destructor Bureaucrat called" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat& copy): name(copy.name), grade(copy.grade)
 {
-    //std::cout << "Copy Bureaucrat called" << std::endl;
+    std::cout << "Copy Bureaucrat called" << std::endl;
     if (this->grade < 1)
 		throw Bureaucrat::GradeTooLowException();
 	else if (this->grade > 150)
@@ -34,14 +34,14 @@ Bureaucrat::Bureaucrat(const Bureaucrat& copy): name(copy.name), grade(copy.grad
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& copy)
 {
-    //std::cout << "Assigened Bureaucrat called" << std::endl;
+    std::cout << "Assigened Bureaucrat called" << std::endl;
     this->grade = copy.grade;
     return (*this);
 }
 
 Bureaucrat::Bureaucrat(const std::string& name, int grade): name(name), grade(grade)
 {
-    //std::cout << "Constructor Bureaucrat Speial called" << std::endl;
+    std::cout << "Constructor Bureaucrat Speial called" << std::endl;
     if (this->grade < 1)
         throw Bureaucrat::GradeTooLowException();
     else if (this->grade > 150)

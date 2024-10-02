@@ -6,24 +6,23 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 10:49:09 by usuario           #+#    #+#             */
-/*   Updated: 2024/10/01 15:43:35 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/10/02 12:32:42 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
 
-AForm::AForm(): name(""), indicatesSigned(false), gradeSign(0), gradeExecute(0), target("") {}
+AForm::AForm(): name(""), indicatesSigned(false), gradeSign(0), gradeExecute(0) {}
 
 AForm::~AForm()
 {
-    //std::cout << "Destrutor Form called" << std::endl;
+    std::cout << "Destrutor Form called" << std::endl;
 }
 
-AForm::AForm(const std::string& name, int gradeSign, int gradeExecute, const std::string& target):
-            name(name), indicatesSigned(false), gradeSign(gradeSign), gradeExecute(gradeExecute),
-			target(target)
+AForm::AForm(const std::string& name, int gradeSign, int gradeExecute):
+            name(name), indicatesSigned(false), gradeSign(gradeSign), gradeExecute(gradeExecute)
 {
-    //std::cout << "Construtor Form Special called" << std::endl;
+    std::cout << "Construtor Form Special called" << std::endl;
      if (gradeSign < 1 || gradeExecute < 1) 
 		throw Bureaucrat::GradeTooLowException();
 	else if (gradeSign > 150 || gradeExecute > 150)
@@ -33,7 +32,7 @@ AForm::AForm(const std::string& name, int gradeSign, int gradeExecute, const std
 AForm::AForm(const AForm& copy): name(copy.name), indicatesSigned(copy.indicatesSigned), 
 			gradeSign(copy.gradeSign), gradeExecute(copy.gradeExecute)
 {
-    //std::cout << "Copy Form called" << std::endl;
+    std::cout << "Copy Form called" << std::endl;
     if (gradeSign < 1 || gradeExecute < 1) 
 		throw Bureaucrat::GradeTooLowException();
 	else if (gradeSign > 150 || gradeExecute > 150)
@@ -42,14 +41,9 @@ AForm::AForm(const AForm& copy): name(copy.name), indicatesSigned(copy.indicates
 
 AForm& AForm::operator=(const AForm& copy)
 {
-    //std::cout << "Assineg Form called" << std::endl;
+    std::cout << "Assineg Form called" << std::endl;
     this->indicatesSigned = copy.indicatesSigned;
     return (*this);   
-}
-
-const std::string AForm::getTarget() const
-{
-	return (this->target);
 }
 
 const std::string AForm::getName() const
