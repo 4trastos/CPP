@@ -22,7 +22,7 @@
 1. **Clonar el Repositorio:**
 
     ```bash
-    git clone https://github.com/tu_usuario/ScalarConverter.git
+    git clone https://github.com/4trastos/ScalarConverter.git
     cd ScalarConverter
     ```
 
