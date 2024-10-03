@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 10:49:09 by usuario           #+#    #+#             */
-/*   Updated: 2024/10/02 12:33:38 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/10/02 16:14:04 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ AForm::AForm(const std::string& name, int gradeSign, int gradeExecute):
 {
     std::cout << "Construtor Form Special called" << std::endl;
      if (gradeSign < 1 || gradeExecute < 1) 
-		throw Bureaucrat::GradeTooLowException();
-	else if (gradeSign > 150 || gradeExecute > 150)
 		throw Bureaucrat::GradeTooHighException();
+	else if (gradeSign > 150 || gradeExecute > 150)
+		throw Bureaucrat::GradeTooLowException();
 }
 
 AForm::AForm(const AForm& copy): name(copy.name), indicatesSigned(copy.indicatesSigned), 
@@ -34,9 +34,9 @@ AForm::AForm(const AForm& copy): name(copy.name), indicatesSigned(copy.indicates
 {
     std::cout << "Copy Form called" << std::endl;
     if (gradeSign < 1 || gradeExecute < 1) 
-		throw Bureaucrat::GradeTooLowException();
-	else if (gradeSign > 150 || gradeExecute > 150)
 		throw Bureaucrat::GradeTooHighException();
+	else if (gradeSign > 150 || gradeExecute > 150)
+		throw Bureaucrat::GradeTooLowException();
 }
 
 AForm& AForm::operator=(const AForm& copy)
@@ -81,7 +81,7 @@ void	AForm::beSigned(const Bureaucrat& bureaucrat)
 	if (bureaucrat.getGrade() <= this->gradeSign)
 		this->indicatesSigned = true;
 	else
-		throw AForm::GradeTooHighException();
+		throw AForm::GradeTooLowException();
 }
 
 std::ostream& operator<<(std::ostream& out, const AForm& form)
@@ -90,8 +90,6 @@ std::ostream& operator<<(std::ostream& out, const AForm& form)
 	if (form.getIndicatesSigned() == true)
 	{
 		out << "Signed. ";
-		out << "Form has signed by a " << form.getGradeSign() << " grade ";
-		out << "and has executed by a " << form.getGradeExecute() << " grade. ";
 	}
 	else
 		out << " Not signed. ";

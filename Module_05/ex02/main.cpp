@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 10:18:56 by usuario           #+#    #+#             */
-/*   Updated: 2024/10/01 18:34:01 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/10/02 16:10:03 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 int main()
 {
-    Bureaucrat mike("Mike", 25);
+    Bureaucrat mike("Mike", 12);
 	Bureaucrat george("George", 72);
 	Bureaucrat peter("Peter", 145);
 
@@ -29,9 +29,7 @@ int main()
 		PresidentialPardonForm x(a);
 		mike.signForm(x);
 		//a.beSigned(mike);
-		//std::cout << a << std::endl;
 		mike.executeForm(x);
-		std::cout << mike << std::endl;
 	}
 	catch(const std::exception& e)
 	{
@@ -109,4 +107,5 @@ int main()
 	}
 
 	std::cout << "\n*****************************" << std::endl;
+	return (0);
 }

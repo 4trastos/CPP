@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 17:03:35 by davgalle          #+#    #+#             */
-/*   Updated: 2024/10/02 12:50:29 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/10/02 14:08:56 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 	std::string file = this->target + "_shrubbery";
 
 	file_out.open(file.c_str());
-	if (!file_out)
+	if (!file_out.is_open())
 	{
 		std::cout << "Error: cannot open " << file << std::endl;
 	}

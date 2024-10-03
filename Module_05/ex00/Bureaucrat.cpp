@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 09:14:21 by usuario           #+#    #+#             */
-/*   Updated: 2024/09/30 16:52:32 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/10/02 15:34:17 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ Bureaucrat::Bureaucrat(const Bureaucrat& copy) : name(copy.name), grade(copy.gra
 {
     std::cout << "Copy Bureaucrat called" << std::endl;
     if (this->grade < 1)
-        throw Bureaucrat::GradeTooLowException();
-    else if (this->grade > 150)
         throw Bureaucrat::GradeTooHighException();
+    else if (this->grade > 150)
+        throw Bureaucrat::GradeTooLowException();
 }
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& copy)
@@ -42,9 +42,9 @@ Bureaucrat::Bureaucrat(const std::string& name, int grade): name(name), grade(gr
 {
     std::cout << "Constructor Bureaucrat Speial called" << std::endl;
     if (this->grade < 1)
-        throw Bureaucrat::GradeTooLowException();
-    else if (this->grade > 150)
         throw Bureaucrat::GradeTooHighException();
+    else if (this->grade > 150)
+        throw Bureaucrat::GradeTooLowException();
 }
 
 const std::string Bureaucrat::getName(void) const
@@ -59,16 +59,16 @@ int Bureaucrat::getGrade(void) const
 
 void    Bureaucrat::incrementGrade()
 {
-    (this->grade)++;
-    if (this->grade > 150)
+    if ((this->grade - 1) < 1)
         throw Bureaucrat::GradeTooHighException();
+    (this->grade)--;
 }
 
 void    Bureaucrat::decrementGrade()
 {
-    (this->grade)--;
-    if (this->grade < 1)
+    if ((this->grade + 1) > 150)
         throw Bureaucrat::GradeTooLowException();
+    (this->grade)++;
 }
 
 std::ostream& operator<<(std::ostream& out, const Bureaucrat& bureaucrat)

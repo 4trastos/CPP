@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 08:52:43 by usuario           #+#    #+#             */
-/*   Updated: 2024/10/01 13:59:47 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/10/02 15:46:11 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main()
 	peter.decrementGrade();
 	std::cout << peter << std::endl;
 
-	std::cout << "\n******** LOW GRADE TEST *********\n" << std::endl;
+	std::cout << "\n******** HI GRADE TEST *********\n" << std::endl;
 	try
 	{
 		Bureaucrat jhon("Jhon", 0);
@@ -33,7 +33,7 @@ int main()
 		std::cerr << e.what() << '\n';
 	}
 	
-	std::cout << "\n******** HI GRADE TEST *********\n" << std::endl;
+	std::cout << "\n******** LOW GRADE TEST *********\n" << std::endl;
 	try
 	{
 		Bureaucrat marco("Marco", 157);

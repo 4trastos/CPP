@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 10:19:25 by usuario           #+#    #+#             */
-/*   Updated: 2024/10/02 12:32:22 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/10/02 15:40:42 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ Bureaucrat::Bureaucrat(const Bureaucrat& copy): name(copy.name), grade(copy.grad
 {
     std::cout << "Copy Bureaucrat called" << std::endl;
     if (this->grade < 1)
-		throw Bureaucrat::GradeTooLowException();
-	else if (this->grade > 150)
 		throw Bureaucrat::GradeTooHighException();
+	else if (this->grade > 150)
+		throw Bureaucrat::GradeTooLowException();
 }
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& copy)
@@ -43,9 +43,9 @@ Bureaucrat::Bureaucrat(const std::string& name, int grade): name(name), grade(gr
 {
     std::cout << "Constructor Bureaucrat Speial called" << std::endl;
     if (this->grade < 1)
-        throw Bureaucrat::GradeTooLowException();
-    else if (this->grade > 150)
         throw Bureaucrat::GradeTooHighException();
+    else if (this->grade > 150)
+        throw Bureaucrat::GradeTooLowException();
 }
 
 const std::string Bureaucrat::getName() const
@@ -60,16 +60,16 @@ int Bureaucrat::getGrade() const
 
 void    Bureaucrat::incrementGrade()
 {
-    (this->grade)++;
-    if (this->grade > 150)
+    if ((this->grade - 1) < 1)
         throw Bureaucrat::GradeTooHighException();
+    (this->grade)--;
 }
 
 void    Bureaucrat::decrementGrade()
 {
-    (this->grade)--;
-    if (this->grade < 1)
+    if ((this->grade + 1) > 150)
         throw Bureaucrat::GradeTooLowException();
+    (this->grade)++;
 }
 
 void    Bureaucrat::signForm(AForm& form)
