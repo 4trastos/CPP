@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 16:33:19 by davgalle          #+#    #+#             */
-/*   Updated: 2024/10/02 17:18:05 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/10/04 17:28:24 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,28 @@
 # include <string>
 # include <iomanip>
 # include <iostream>
+# include <sstream>
 # include <limits>
 # include <cmath>
+# include <cctype>
+# include <map>
+# include <cerrno>
 
 class ScalarConverter
 {
 	private:
-		ScalarConverter();
-		ScalarConverter(const ScalarConverter& copy);
-		~ScalarConverter();
+		ScalarConverter(){};
+		ScalarConverter(const ScalarConverter& copy){};
+		ScalarConverter& operator=(const ScalarConverter& copy);
+		~ScalarConverter(){};
+
+		static void printChar(double value);
+		static void printInt(double value);
+		static void printFloat(double value);
+		static void printDouble(double value);
 
 	public:
-
-		ScalarConverter& operator=(const ScalarConverter& copy);
-		
+		static void convert(const std::string& literal);
 };
 
 #endif
