@@ -6,11 +6,11 @@
 #    By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/02 16:32:29 by davgalle          #+#    #+#              #
-#    Updated: 2024/10/07 15:16:17 by davgalle         ###   ########.fr        #
+#    Updated: 2024/10/07 16:16:26 by davgalle         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = identify
+NAME = serialization
 
 CC = c++
 
@@ -20,11 +20,7 @@ RM = rm -f
 
 SRC = main.cpp \
 	Base.cpp \
-	A.cpp \
-	B.cpp \
-	C.cpp \
-	Serializer.cpp
-
+	
 OBJTS = $(SRC:.cpp=.o)
 
 $(NAME): $(OBJTS)
