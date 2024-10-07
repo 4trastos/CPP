@@ -6,11 +6,22 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 15:35:45 by davgalle          #+#    #+#             */
-/*   Updated: 2024/10/04 18:05:00 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/10/07 19:02:50 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
+
+int	countDecimals(std::string str)
+{
+	std::size_t poinPos = str.find('.');
+	if (poinPos == std::string::npos)
+		return (0);
+	
+	int count = str.length() - poinPos -1;
+	
+	return (count);
+}
 
 void	ScalarConverter::printChar(double value)
 {
@@ -42,10 +53,11 @@ void	ScalarConverter::printInt(double value)
 	}
 }
 
-void	ScalarConverter::printFloat(double value)
+void	ScalarConverter::printFloat(std::string const& literal)
 {
 	std::cout << "float: ";
-	float f = static_cast<float>(value);
+	double s = atof(literal.c_str());
+	float f = static_cast<float>(s);
 	if (std::isnan(f))
 		std::cout << "nanf" << std::endl;
 	else if (std::isinf(f))
@@ -56,7 +68,19 @@ void	ScalarConverter::printFloat(double value)
 			std::cout << "-inff" << std::endl;	
 	}
 	else
-		std::cout << std::fixed << std::setprecision((f - static_cast<int>(f)) != 0 ? 1 : 0) << f << ".0f" << std::endl;
+	{
+		std::cout << std::fixed;
+		int decimals = countDecimals(literal);
+		if (decimals > 8)
+			decimals = 8;
+		std::cout << std::setprecision(decimals);
+		std::cout << f;
+		if (decimals == 0)
+			std::cout << ".0f";
+		else
+			std::cout << "f";
+		std::cout << std::endl;
+	}
 }
 
 void	ScalarConverter::printDouble(double value)
@@ -72,5 +96,15 @@ void	ScalarConverter::printDouble(double value)
 			std::cout << "-inf" << std::endl;
 	}
 	else
-		std::cout << std::fixed << std::setprecision((value - static_cast<int>(value) != 0 ? 1 : 0)) << value  << ".0" << std::endl;
+	{
+		std::cout << std::fixed;
+		if ((value - static_cast<int>(value)) != 0)
+			std::cout << std::setprecision(2);
+		else
+			std::cout << std::setprecision(0);
+		std::cout << value;
+		if (value - static_cast<int>(value) == 0)
+			std::cout << ".0";
+	}
+	std::cout << std::endl;
 }

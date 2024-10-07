@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 16:33:19 by davgalle          #+#    #+#             */
-/*   Updated: 2024/10/04 17:28:24 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/10/07 18:55:34 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 # include <limits>
 # include <cmath>
 # include <cctype>
-# include <map>
 # include <cerrno>
 
 class ScalarConverter
@@ -33,7 +32,7 @@ class ScalarConverter
 
 		static void printChar(double value);
 		static void printInt(double value);
-		static void printFloat(double value);
+		static void printFloat(std::string const& literal);
 		static void printDouble(double value);
 
 	public:

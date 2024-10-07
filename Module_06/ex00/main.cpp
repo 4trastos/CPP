@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 16:32:18 by davgalle          #+#    #+#             */
-/*   Updated: 2024/10/03 12:18:41 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/10/04 18:37:50 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,5 @@ int main(int argc, char **argv)
 	}
 	std::string literal = argv[1];
 	ScalarConverter::convert(literal);
-	/* ScalarConverter::convert("42");
-	std::cout << std::endl;
-	ScalarConverter::convert("a");
-	std::cout << std::endl;
-	ScalarConverter::convert("2.5f");
-	std::cout << std::endl;
-	ScalarConverter::convert("2.3456787678");
-	std::cout << std::endl;
-	ScalarConverter::convert("nanf");
-	std::cout << std::endl;
-	ScalarConverter::convert("inf");
-	std::cout << std::endl;
-	ScalarConverter::convert("-inff"); */
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 16:33:22 by davgalle          #+#    #+#             */
-/*   Updated: 2024/10/04 18:31:49 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/10/07 18:55:40 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,10 @@ void ScalarConverter::convert(std::string const& literal)
 	if ((literal.c_str()[0] < '0' || literal.c_str()[0] > '9') && literal != "nan" &&
 			literal != "inf" && literal != "-inf" && literal != "nanf" && literal != "inff"
 			&& literal != "-inff" && literal.length() > 1)
+	{
 		std::cout << "Error: Not valid string" << std::endl;
+		return;
+	}
 	if (literal.length() == 1 && isprint(literal[0]) && (literal.c_str()[0] < '0' || literal.c_str()[0] >= '9'))
 		flag = 1;
 	double s = atof(literal.c_str());
@@ -41,7 +44,7 @@ void ScalarConverter::convert(std::string const& literal)
 	{
 		printChar(s);
 		printInt(s);
-		printFloat(s);
+		printFloat(literal.c_str());
 		printDouble(s);
 	}
 }
