@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 16:33:22 by davgalle          #+#    #+#             */
-/*   Updated: 2024/10/07 18:55:40 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/10/08 11:44:39 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,36 @@ ScalarConverter& ScalarConverter::operator=(const ScalarConverter& copy)
 void ScalarConverter::convert(std::string const& literal)
 {
 	int flag = 0;
-	if (literal != "nanf" && literal != "inff" && literal != "-inff")
-		literal.substr(0, literal.length() - 1);
-	if ((literal.c_str()[0] < '0' || literal.c_str()[0] > '9') && literal != "nan" &&
-			literal != "inf" && literal != "-inf" && literal != "nanf" && literal != "inff"
-			&& literal != "-inff" && literal.length() > 1)
+	if ((literal.c_str()[0] != '-' && literal.c_str()[0] != '+' &&
+		(literal.c_str()[0] < '0' || literal.c_str()[0] > '9')) && literal != "nan" &&
+			literal != "-inf" && literal != "nanf" && literal != "-inff" &&
+			literal != "+inf" && literal != "+inff" && literal.length() > 1)
 	{
 		std::cout << "Error: Not valid string" << std::endl;
 		return;
+	}
+	std::size_t pointPos = literal.find('.');
+	if (pointPos != std::string::npos)
+	{
+		for (std::size_t i = pointPos + 1; i < literal.length(); ++i)
+		{
+			if (literal[i] == '-' || literal[i] == '+')
+			{
+				std::cout << "Error: Not valid string" << std::endl;
+				return;
+			}
+		}
+	}
+	else
+	{
+		for (std::size_t i = 1; i < literal.length(); ++i)
+		{
+			if (literal[i] == '-' || literal[i] == '+')
+			{
+				std::cout << "Error: Not valid string" << std::endl;
+				return;
+			}
+		}
 	}
 	if (literal.length() == 1 && isprint(literal[0]) && (literal.c_str()[0] < '0' || literal.c_str()[0] >= '9'))
 		flag = 1;
@@ -45,6 +67,6 @@ void ScalarConverter::convert(std::string const& literal)
 		printChar(s);
 		printInt(s);
 		printFloat(literal.c_str());
-		printDouble(s);
+		printDouble(literal.c_str());
 	}
 }

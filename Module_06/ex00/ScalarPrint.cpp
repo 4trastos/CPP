@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 15:35:45 by davgalle          #+#    #+#             */
-/*   Updated: 2024/10/07 19:02:50 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/10/08 09:15:46 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,18 @@ int	countDecimals(std::string str)
 		return (0);
 	
 	int count = str.length() - poinPos -1;
+	for (size_t i = poinPos + 1; i < str.length(); i++)
+	{
+		char c = str[i];
+		if (!isdigit(c) && (c != 'f' || i != str.length() - 1))
+			{
+				std::cout << "Error: Not valid string" << std::endl;
+				exit (1);
+			}
+	}
 	
+	if (str.back() == 'f')
+		count--;
 	return (count);
 }
 
@@ -71,8 +82,8 @@ void	ScalarConverter::printFloat(std::string const& literal)
 	{
 		std::cout << std::fixed;
 		int decimals = countDecimals(literal);
-		if (decimals > 8)
-			decimals = 8;
+		if (decimals > 7)
+			decimals = 7;
 		std::cout << std::setprecision(decimals);
 		std::cout << f;
 		if (decimals == 0)
@@ -83,14 +94,15 @@ void	ScalarConverter::printFloat(std::string const& literal)
 	}
 }
 
-void	ScalarConverter::printDouble(double value)
+void	ScalarConverter::printDouble(std::string const& literal)
 {
 	std::cout << "double: ";
-	if (std::isnan(value))
+	double s = atof(literal.c_str());
+	if (std::isnan(s))
 		std::cout << "nan" << std::endl;
-	else if (std::isinf(value))
+	else if (std::isinf(s))
 	{
-		if (value > 0)
+		if (s > 0)
 			std::cout << "+inf" << std::endl;
 		else
 			std::cout << "-inf" << std::endl;
@@ -98,13 +110,14 @@ void	ScalarConverter::printDouble(double value)
 	else
 	{
 		std::cout << std::fixed;
-		if ((value - static_cast<int>(value)) != 0)
-			std::cout << std::setprecision(2);
-		else
-			std::cout << std::setprecision(0);
-		std::cout << value;
-		if (value - static_cast<int>(value) == 0)
+		int decimals = countDecimals(literal);
+		if (decimals > 15)
+			decimals = 15;
+		std::cout << std::setprecision(decimals);
+		std::cout << s;
+		if (decimals == 0)
 			std::cout << ".0";
+		std::cout << std::endl;
 	}
 	std::cout << std::endl;
 }
