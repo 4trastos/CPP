@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/10/08 13:42:59 by davgalle          #+#    #+#              #
-#    Updated: 2024/10/10 18:33:59 by davgalle         ###   ########.fr        #
+#    Created: 2024/10/10 18:49:51 by davgalle          #+#    #+#              #
+#    Updated: 2024/10/10 19:04:44 by davgalle         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = iter
+NAME = Array
 
 CC = c++
 

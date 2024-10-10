@@ -6,11 +6,12 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 13:36:12 by davgalle          #+#    #+#             */
-/*   Updated: 2024/10/08 13:40:40 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/10/10 17:36:55 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Whatever.hpp"
+#include "Fixed.hpp"
 
 int main( void )
 {
@@ -38,6 +39,13 @@ int main( void )
 	std::cout << "min( a, b ) = " << ::min( e, f ) << std::endl;
 	std::cout << "max( a, b ) = " << ::max( f, f ) << std::endl;
 
+	Fixed g(1);
+	Fixed h(3);
+
+	::swap( g, h );
+	std::cout << "g = " << g << ", h = " << h << std::endl;
+	std::cout << "min( g, h ) = " << ::min( g, h ) << std::endl;
+	std::cout << "max( g, h ) = " << ::max( g, h ) << std::endl;
 
 	return 0;
 }

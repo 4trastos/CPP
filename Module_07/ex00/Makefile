@@ -6,7 +6,7 @@
 #    By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/08 12:31:24 by davgalle          #+#    #+#              #
-#    Updated: 2024/10/08 13:38:04 by davgalle         ###   ########.fr        #
+#    Updated: 2024/10/10 17:33:24 by davgalle         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ CFLAG = -Wall -Werro -Wextra -g3 -std=c++98
 
 RM = rm -f
 
-SRC = main.cpp
+SRC = main.cpp \
+	Fixed.cpp
 
 OBJTS = $(SRC:.cpp=.o)
 
