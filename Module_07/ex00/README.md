@@ -1,8 +1,8 @@
-Implementa una plantilla de función `iter` que tome 3 parámetros y no devuelva nada.
-- El primer parámetro es la dirección de un array.
-- El segundo parámetro es la longitud del array.
-- El tercer parámetro es una función que será llamada en cada elemento del array.
+Implementa las siguientes plantillas de función:
+- `swap`: Intercambia los valores de dos argumentos dados. No devuelve nada.
+- `min`: Compara los dos valores pasados como argumentos y devuelve el menor. Si ambos son iguales, devuelve el segundo.
+- `max`: Compara los dos valores pasados como argumentos y devuelve el mayor. Si ambos son iguales, devuelve el segundo.
 
-Entrega un archivo `main.cpp` que contenga tus pruebas. Proporciona el código suficiente para generar un ejecutable de prueba.
+Estas funciones pueden ser llamadas con cualquier tipo de argumento. El único requisito es que los dos argumentos deben tener el mismo tipo y deben soportar todos los operadores de comparación.
 
-Tu plantilla de función `iter` debe funcionar con cualquier tipo de array. El tercer parámetro puede ser una plantilla de función instanciada.
+Las plantillas deben definirse en los archivos de cabecera.
