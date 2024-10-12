@@ -6,7 +6,7 @@
 /*   By: usuario <usuario@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 10:03:42 by usuario           #+#    #+#             */
-/*   Updated: 2024/10/12 12:58:16 by usuario          ###   ########.fr       */
+/*   Updated: 2024/10/12 14:21:46 by usuario          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,18 @@
 
 # include <iomanip>
 # include <iostream>
+# include <vector>
+# include <exception>
+# include <cstdlib>
+# include <ctime>
+# include <list>
 
 class Span
 {
     private:
-        /* data */
+        unsigned int N;
+        std::vector<int> vect;
+
     public:
         Span();
         Span(const Span& copy);
@@ -27,11 +34,22 @@ class Span
         ~Span();
         
         Span(unsigned int N);
-        void  addNumber();
-        void shortestSpan();
-        void longestSpan();
+        void  addNumber(int number);
+        unsigned int shortestSpan() const;
+        unsigned int longestSpan() const;
 
+        void fillVector(int n);
+		void vectView();
 
+        class SpanFullException : public std::exception
+        {
+            virtual const char * what() const throw();
+        };
+
+        class NotEnoughNumbersException : public std::exception
+        {
+            virtual const char * what() const throw();
+        };
 };
 
 #endif
