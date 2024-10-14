@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: usuario <usuario@student.42.fr>            +#+  +:+       +#+        */
+/*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 10:01:48 by usuario           #+#    #+#             */
-/*   Updated: 2024/10/12 14:45:22 by usuario          ###   ########.fr       */
+/*   Updated: 2024/10/14 12:53:40 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,10 +84,36 @@ int main()
 	std::cout << "shortestSpan() = " << sp.shortestSpan() << std::endl;
 	std::cout << "longestSpan() = " << sp.longestSpan() << std::endl;
 	std::cout << std::endl;
-    //Prueba 6: Test 1000 números aleatorios
-	std::cout << "Prueba 6: Test 1000 números aleatorios" << std::endl;
+	
+	//Prueba 6: Test agregar 2 número más al vector 'vacío' y pasar límete de int
+	std::cout << "Prueba 6: Test agregar 2 número más al vector 'vacío' y pasar límete de int" << std::endl;
+	try
+	{
+		empty.addNumber(17);
+		empty.addNumber(9);
+		empty.addNumber(11);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	
+	try {
+		std::cout << "shortestSpan() = " << empty.shortestSpan() << std::endl;
+	} catch(const std::exception& e) {
+		std::cerr << e.what() <<  std::endl;
+	}
 
-	Span rand_vec(30);
+	try {
+		std::cout << "longestSpan() = " << empty.longestSpan() << std::endl;
+	} catch(const std::exception& e) {
+		std::cerr << e.what() <<  std::endl;
+	}
+	std::cout << std::endl;
+    //Prueba 6: Test 1000 números aleatorios
+	std::cout << "Prueba 7: Test 10.000 números aleatorios" << std::endl;
+
+	Span rand_vec(36);
 	rand_vec.addNumber(222);
 	rand_vec.fillVector(29);
 	rand_vec.vectView();

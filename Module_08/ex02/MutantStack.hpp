@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   MutantStack.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: usuario <usuario@student.42.fr>            +#+  +:+       +#+        */
+/*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 12:12:57 by usuario           #+#    #+#             */
-/*   Updated: 2024/10/13 13:07:42 by usuario          ###   ########.fr       */
+/*   Updated: 2024/10/14 13:09:36 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MUTANTSTACK_HPP
 # define MUTANTSTACK_HPP
 
-# include <iostream>
 # include <stack>
+# include <iostream>
 # include <vector>
 # include <algorithm>
 # include <list>

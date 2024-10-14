@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: usuario <usuario@student.42.fr>            +#+  +:+       +#+        */
+/*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 12:58:57 by usuario           #+#    #+#             */
-/*   Updated: 2024/10/12 14:31:59 by usuario          ###   ########.fr       */
+/*   Updated: 2024/10/14 12:53:52 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,9 @@ unsigned int Span::shortestSpan() const
 {
     if (vect.size() < 2)
         throw NotEnoughNumbersException();
-    std::vector<int> sorted = vect;
+    std::vector<int> sorted = this->vect;
     std::sort(sorted.begin(), sorted.end());
-    unsigned int minSpan = UINT_MAX;
+    unsigned int minSpan = std::numeric_limits<int>::min();
     for (size_t i = 0; i < sorted.size(); i++)
     {
         unsigned int span = sorted[i] - sorted[i - 1];
@@ -79,7 +79,7 @@ unsigned int Span::longestSpan() const
 void Span::fillVector(int n)
 {
 	for (int i = 0; i < n; i++) {
-		this->addNumber(rand() % 1000);
+		this->addNumber(rand() % 10000);
 	}
 }
 
@@ -90,6 +90,12 @@ void Span::vectView()
 		std::cout << vect[i] << " ";
 	}
 	std::cout << std::endl;
+    // std::sort(vect.begin(), vect.end());
+    // for (size_t i = 0; i < (this->vect.size()); i++)
+	// {
+	// 	std::cout << vect[i] << " ";
+	// }
+    // std::cout << std::endl;
 }
 
 const char* Span::NotEnoughNumbersException::what() const throw()

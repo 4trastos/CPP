@@ -3,23 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: usuario <usuario@student.42.fr>            +#+  +:+       +#+        */
+/*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 10:03:42 by usuario           #+#    #+#             */
-/*   Updated: 2024/10/12 14:21:46 by usuario          ###   ########.fr       */
+/*   Updated: 2024/10/14 11:43:12 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SPAN_HPP
 # define SPAN_HPP
 
-# include <iomanip>
 # include <iostream>
+# include <algorithm>
 # include <vector>
-# include <exception>
-# include <cstdlib>
-# include <ctime>
-# include <list>
+# include <limits>
 
 class Span
 {
