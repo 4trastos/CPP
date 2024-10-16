@@ -6,32 +6,45 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 14:49:05 by davgalle          #+#    #+#             */
-/*   Updated: 2024/10/16 13:30:01 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/10/16 15:46:22 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
 
-BitcoinExchange::BitcoinExchange()  : file("") {};
-
-BitcoinExchange::~BitcoinExchange() {};
-
-BitcoinExchange::BitcoinExchange(const BitcoinExchange& copy)
+BitcoinExchange::BitcoinExchange() : file("") 
 {
-	this->file = copy.file;
-	*this = copy;
+	if (!LoadExchangeRates("rates.txt"))
+		std::cout << "Error: Failed to load exchange rates." << std::endl;
+	else
+	{
+		for (std::map<std::string, float>::iterator it = exchangeRates.begin() ; it != exchangeRates.end(); it++)
+		{}
+		
+	}
 }
+
+BitcoinExchange::~BitcoinExchange() {}
+
+BitcoinExchange::BitcoinExchange(std::string filename) : file(filename)
+{
+	if (!LoadExchangeRates("rates.txt"))
+		std::cout << "Error: Failed to load exchange rates." << std::endl;
+}
+
+BitcoinExchange::BitcoinExchange(const BitcoinExchange& copy) : file(copy.file),
+										exchangeRates(copy.exchangeRates) {}
 
 BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange& copy)
 {
-	this->file = copy.file;
+	if (this != &copy)
+	{
+		this->file = copy.file;
+		this->exchangeRates = copy.exchangeRates;
+	}
 	return (*this);
 }
 
-BitcoinExchange::BitcoinExchange(std::string filename)
-{
-	this->file = filename;
-}
 
 bool BitcoinExchange::ParseFile(std::string filename)
 {
@@ -50,7 +63,7 @@ bool BitcoinExchange::ParseFile(std::string filename)
 	}
 }
 
-void	BitcoinExchange::OpenProntf(std::string filename)
+void	BitcoinExchange::OpenProntf(const std::string filename)
 {
 	std::ifstream infile(filename.c_str());
 	if (!infile)
@@ -101,12 +114,12 @@ void	BitcoinExchange::OpenProntf(std::string filename)
 
 		float valuef = std::atof(valueStr.c_str());
 
-		if (valuef > 2147483647.0f || static_cast<int>(valuef) > 2147483647)
+		if (valuef > 2147483647.0)
 		{
 			std::cout << "Error: too large a number." << std::endl;
 			continue;
 		}
-		
+
 		std::map<std::string, float>::iterator it = exchangeRates.find(date);
 		
 		if (it == exchangeRates.end())
@@ -122,6 +135,7 @@ void	BitcoinExchange::OpenProntf(std::string filename)
 				--lowerIt;
 				float rate = lowerIt->second;
 				float result = valuef * rate;
+				std::cout << "Closest date: " << lowerIt->first << " Rate: " << rate << std::endl;
 				std::cout << date << " => " << valuef << " = " << result << std::endl;	
 			}
 		}
@@ -135,57 +149,63 @@ void	BitcoinExchange::OpenProntf(std::string filename)
 	infile.close();
 }
 
-bool	BitcoinExchange::isValiDate(std::string date)
+bool	BitcoinExchange::LoadExchangeRates(const std::string& ratesFile)
 {
-	bool isLeapYear = false;
-	
-	if (date.size() != 10)
-		return (false);
-	if (date[4] != '-' || date[7] != '-')
-		return (false);
-	std::string yearStr = date.substr(0, 4);
-	std::string monthStr = date.substr(5, 2);
-	std::string dayStr = date.substr(8, 2);
-
-	int year = std::atoi(yearStr.c_str());
-	int month = std::atoi(monthStr.c_str());
-	int day = std::atoi(dayStr.c_str());
-
-	if (month < 1 || month > 12)
-		return (false);
-	
-	int daysMonth[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-
-	if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
-		isLeapYear = true;
-	if (isLeapYear && month == 2)
-		daysMonth[2] = 29;
-	if (day < 1 || day > daysMonth[month - 1])
-		return (false);
-	return (true);
-}
-
-bool	BitcoinExchange::isPositiveNumber(std::string value)
-{
-	int	dotCount = 0;
-	
-	if (value.empty())
-		return (false);
-	
-	for (size_t i = 0; i < value.size(); i++)
+	std::ifstream infile(ratesFile.c_str());
+	if (!infile)
 	{
-		if (value[i] == '.')
-		{
-			dotCount++;
-			if (dotCount > 1)
-				return (false);
-		}
-		else if (!std::isdigit(static_cast<unsigned int>(value[i])))
-			return (false);
-	}
-	
-	float valuef = std::atof(value.c_str());
-	if (valuef <= 0)
+		std::cout << "Error: could not open rates file." << std::endl;
 		return (false);
+	}
+
+	std::string line;
+	int			lineNumber = 0;
+
+	while (std::getline(infile, line))
+	{
+		lineNumber++;
+		if (lineNumber == 1)
+			continue;
+		
+		std::string trimmedLine = trim(line);
+		if (trimmedLine.empty())
+			continue;
+		
+		std::vector<std::string> tokens = split(trimmedLine, '|');
+		if (tokens.size() != 2)
+		{
+			std::cout << "Error: bad format in rates file at line " << trimmedLine << std::endl;
+			continue;
+		}
+
+		std::string date = trim(tokens[0]);
+		std::string valueStr = trim(tokens[1]);
+
+		if (!isValiDate(date))
+		{
+			std::cout << "Error: bad input => " << trimmedLine << std::endl;
+			continue;
+		}
+
+		if (!isPositiveNumber(valueStr))
+		{
+			float valuef = std::atof(valueStr.c_str());
+			if (valuef < 0)
+				std::cout << "Error: not a positive number." << std::endl;
+			else
+				std::cout << "Error: bad input => " << trimmedLine << std::endl;
+			continue;
+		}
+
+		float valuef = std::atof(valueStr.c_str());
+		if (valuef > 2147483647.0f)
+		{
+			std::cout << "Error: too large a number." << std::endl;
+			continue;
+		}
+
+		exchangeRates[date] = valuef;
+	}
+	infile.close();
 	return (true);
 }

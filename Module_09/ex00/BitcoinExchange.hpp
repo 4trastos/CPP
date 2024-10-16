@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 14:46:02 by davgalle          #+#    #+#             */
-/*   Updated: 2024/10/16 13:13:29 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/10/16 15:22:37 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,13 @@ class BitcoinExchange
 		BitcoinExchange(std::string filename);
 		
 		bool	ParseFile(std::string filename);
-		void	OpenProntf(std::string filename);
-		bool    isValiDate(std::string date);
-		bool	isPositiveNumber(std::string value);
+		void	OpenProntf(const std::string filename);
+		bool	LoadExchangeRates(const std::string& ratesFile);
 };
 
 std::string trim(const std::string& str); // Recortar espacios en blanco
 std::vector<std::string> split(const std::string& str, char delimiter);
+bool    isValiDate(std::string date);
+bool	isPositiveNumber(std::string value);
 
 #endif
