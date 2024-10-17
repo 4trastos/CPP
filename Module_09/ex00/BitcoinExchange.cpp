@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 14:49:05 by davgalle          #+#    #+#             */
-/*   Updated: 2024/10/16 16:01:14 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/10/17 15:34:18 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ bool BitcoinExchange::ParseFile(std::string filename)
 void	BitcoinExchange::OpenProntf(const std::string filename)
 {
 	std::ifstream infile(filename.c_str());
-	if (!infile)
+	if (!infile.is_open())
 	{
 		std::cout << "Error: could not open file. " <<  std::endl;
 		return;
@@ -108,12 +108,8 @@ void	BitcoinExchange::OpenProntf(const std::string filename)
 
 		if (!isPositiveNumber(valueStr))
 		{
-			float valuef = std::atof(valueStr.c_str());
-			if (valuef < 0)
-				std::cout << "Error: not a positive number." << std::endl;
-			else
-				std::cout << "Error: bad input => " << trimLine << std::endl;
-			continue;
+			std::cout << "Error: not a positive number." << std::endl;
+    		continue;
 		}
 
 		float valuef = std::atof(valueStr.c_str());
@@ -191,18 +187,14 @@ bool	BitcoinExchange::LoadExchangeRates(const std::string& ratesFile)
 			if (flag == -1)
 				std::cout << "This year is not a leap year" << std::endl;
 			else
-				std::cout << "Error: bad input => " << trimmedLine << std::endl;
+				std::cout << "Error: bad input => " << std::endl;
 			continue;
 		}
 
 		if (!isPositiveNumber(valueStr))
 		{
-			float valuef = std::atof(valueStr.c_str());
-			if (valuef < 0)
-				std::cout << "Error: not a positive number." << std::endl;
-			else
-				std::cout << "Error: bad input => " << trimmedLine << std::endl;
-			continue;
+			std::cout << "Error: not a positive number." << trimmedLine << std::endl;
+    		continue;
 		}
 
 		float valuef = std::atof(valueStr.c_str());
