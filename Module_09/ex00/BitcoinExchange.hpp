@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 14:46:02 by davgalle          #+#    #+#             */
-/*   Updated: 2024/10/16 15:50:28 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/10/17 17:53:54 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,13 @@
 # include <iomanip>
 # include <iostream>
 # include <fstream>
-# include <vector>
-# include <list>
 # include <cstdlib>
 # include <cctype>
 # include <map>
 # include <sstream>
+# include <cstring>
+
+const int MAX_TOKENS = 100;
 
 class BitcoinExchange
 {
@@ -43,8 +44,9 @@ class BitcoinExchange
 };
 
 std::string trim(const std::string& str); // Recortar espacios en blanco
-std::vector<std::string> split(const std::string& str, char delimiter);
+char** split(const std::string& str, char delimiter);
 bool    isValiDate(std::string date, int *flag);
 bool	isPositiveNumber(std::string value);
+void	freeTokens(char** tokens);
 
 #endif

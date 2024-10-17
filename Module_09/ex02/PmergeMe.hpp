@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 12:48:27 by davgalle          #+#    #+#             */
-/*   Updated: 2024/10/17 15:03:16 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/10/17 17:25:23 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <iostream>
 # include <cstdlib>
-# include <vector>
+# include <list>
 # include <string>
 # include <deque>
 # include <ctime>
@@ -25,7 +25,7 @@ class PmergeMe
 {
 	private:
 		std::deque<int> deq;
-		std::vector<int> vec;
+		std::list<int> lis;
 		
 	public:
 		PmergeMe();
@@ -34,7 +34,7 @@ class PmergeMe
 		~PmergeMe();
 
 		void	loadData(char **argv);
-		void	sortVector();
+		void	sortList();
 		void	sortDeque();
 		void	printSequence() const;
 		void	printSort() const;

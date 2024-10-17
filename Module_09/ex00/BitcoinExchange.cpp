@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 14:49:05 by davgalle          #+#    #+#             */
-/*   Updated: 2024/10/17 15:34:18 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/10/17 17:51:12 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ bool BitcoinExchange::ParseFile(std::string filename)
 		std::string extension = filename.substr(filename.size() - 4, 4);
 		if (extension == ".txt")
 			return (true);
+		else if (extension == ".csv")
+			return (true);
 		else
 			return (false);
 	}
@@ -85,14 +87,20 @@ void	BitcoinExchange::OpenProntf(const std::string filename)
 		if (trimLine.empty())
 			continue;
 		
-		std::vector<std::string> tokens = split(trimLine, '|');
+		char **tokens = split(trimLine, '|');
 		
-		if (tokens.size() != 2)
+		int tokenCount = 0;
+        while (tokens[tokenCount] != NULL)
 		{
-			std::cout << "Error: bad input => " << trimLine << std::endl;
-			continue;
-		}
-		
+            tokenCount++;
+        }
+
+        if (tokenCount != 2) {
+            std::cout << "Error: bad input => " << trimLine << std::endl;
+            freeTokens(tokens);
+            continue;
+        }
+
 		std::string date = trim(tokens[0]);
 		std::string valueStr = trim(tokens[1]);
 		int				flag = 0;
@@ -145,6 +153,7 @@ void	BitcoinExchange::OpenProntf(const std::string filename)
 			float result = valuef * rate;
 			std::cout << date << " => " << valuef << " = " << result << std::endl;	
 		}
+		freeTokens(tokens);
 	}
 	infile.close();
 }
@@ -171,12 +180,20 @@ bool	BitcoinExchange::LoadExchangeRates(const std::string& ratesFile)
 		if (trimmedLine.empty())
 			continue;
 		
-		std::vector<std::string> tokens = split(trimmedLine, '|');
-		if (tokens.size() != 2)
+		char **tokens = split(trimmedLine, '|');
+		
+		int tokenCount = 0;
+        while (tokens[tokenCount] != NULL)
 		{
-			std::cout << "Error: bad format in rates file at line " << trimmedLine << std::endl;
-			continue;
-		}
+            tokenCount++;
+        }
+
+        if (tokenCount != 2) {
+            std::cout << "Error: bad input => " << trimmedLine << std::endl;
+            freeTokens(tokens);
+            continue;
+        }
+
 
 		std::string date = trim(tokens[0]);
 		std::string valueStr = trim(tokens[1]);
@@ -203,7 +220,7 @@ bool	BitcoinExchange::LoadExchangeRates(const std::string& ratesFile)
 			std::cout << "Error: too large a number." << std::endl;
 			continue;
 		}
-
+		freeTokens(tokens);
 		exchangeRates[date] = valuef;
 	}
 	infile.close();

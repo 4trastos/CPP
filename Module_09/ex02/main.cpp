@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 12:47:42 by davgalle          #+#    #+#             */
-/*   Updated: 2024/10/17 15:06:37 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/10/17 17:25:42 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@ int main(int argc, char **argv)
 	size = sorter.sizeSort();
 	sorter.printSequence();
 
-	sorter.sortVector();
+	sorter.sortList();
 	sorter.printSort();
 
 	sorter.loadData(argv);
 
 	clock_t start = clock();
-	sorter.sortVector();
+	sorter.sortList();
 	clock_t end = clock();
 	sorter.printTime(start, end, size, "std::vector");
 

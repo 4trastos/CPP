@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 12:48:15 by davgalle          #+#    #+#             */
-/*   Updated: 2024/10/17 15:13:39 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/10/17 17:25:28 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ PmergeMe::~PmergeMe() {}
 PmergeMe::PmergeMe(const PmergeMe& copy)
 {
 	this->deq = copy.deq;
-	this->vec = copy.vec;
+	this->lis = copy.lis;
 }
 
 PmergeMe&	PmergeMe::operator=(const PmergeMe& copy)
@@ -27,7 +27,7 @@ PmergeMe&	PmergeMe::operator=(const PmergeMe& copy)
 	if (this != &copy)
 	{
 		this->deq = copy.deq;
-		this->vec = copy.vec;
+		this->lis = copy.lis;
 	}
 	return (*this);
 }
@@ -46,14 +46,14 @@ void	PmergeMe::loadData(char **argv)
 			exit (1);
 		}
 		this->deq.push_back(value);
-		this->vec.push_back(value);
+		this->lis.push_back(value);
 		i++;
 	}
 }
 
-void	PmergeMe::sortVector()
+void	PmergeMe::sortList()
 {
-	std::sort(this->vec.begin(), this->vec.end());
+	this->lis.sort();
 }
 
 void	PmergeMe::sortDeque()
@@ -66,8 +66,8 @@ void	PmergeMe::printSequence() const
 {
 	std::cout << "Before: ";
 	
-	for (size_t i = 0; i < this->vec.size(); i++)
-		std::cout << this->vec[i] << " ";
+	for (std::list<int>::const_iterator it = this->lis.begin(); it != this->lis.end(); ++it)
+		std::cout << *it << " ";
 	
 	std::cout << std::endl;
 }
@@ -75,14 +75,14 @@ void	PmergeMe::printSequence() const
 void	PmergeMe::printSort() const
 {
 	std::cout << "After: ";
-	for (size_t i = 0; i < this->vec.size(); i++)
-		std::cout << this->vec[i] << " ";
+	for (std::list<int>::const_iterator it = this->lis.begin(); it != this->lis.end(); ++it)
+		std::cout << *it << " ";
 	std::cout << std::endl;
 }
 
 int PmergeMe::sizeSort()
 {
-	int size = this->vec.size();
+	int size = this->lis.size();
 	return (size);
 }
 

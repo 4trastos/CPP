@@ -6,11 +6,22 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 13:42:03 by davgalle          #+#    #+#             */
-/*   Updated: 2024/10/16 15:51:23 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/10/17 18:02:29 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
+
+const int MAX_TOKENS = 100;
+
+void freeTokens(char** tokens)
+{
+    for (int i = 0; tokens[i] != NULL; ++i)
+	{
+        delete[] tokens[i];
+    }
+    delete[] tokens;
+}
 
 std::string trim(const std::string& str)
 {
@@ -25,17 +36,31 @@ std::string trim(const std::string& str)
     return str.substr(start, end - start);
 }
 
-std::vector<std::string> split(const std::string& str, char delimiter)
+char **split(const std::string& str, char delimiter)
 {
-    std::vector<std::string> tokens;
+    char** tokens = new char*[MAX_TOKENS + 1];
     std::string token;
-    std::istringstream tokenStream(str);
+    size_t start = 0;
+    size_t end = str.find(delimiter);
+    int tokenIndex = 0;
 
-    while (std::getline(tokenStream, token, delimiter))
-    {
-        tokens.push_back(token);
+    while (end != std::string::npos) {
+        token = str.substr(start, end - start);
+        tokens[tokenIndex] = new char[token.length() + 1];
+        std::strcpy(tokens[tokenIndex], token.c_str());
+        tokenIndex++;
+        start = end + 1;
+        end = str.find(delimiter, start);
     }
 
+    if (start < str.length()) {
+        token = str.substr(start);
+        tokens[tokenIndex] = new char[token.length() + 1];
+        std::strcpy(tokens[tokenIndex], token.c_str());
+        tokenIndex++;
+    }
+
+    tokens[tokenIndex] = NULL;
     return tokens;
 }
 
