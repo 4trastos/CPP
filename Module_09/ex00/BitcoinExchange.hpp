@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 14:46:02 by davgalle          #+#    #+#             */
-/*   Updated: 2024/10/17 17:53:54 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/10/17 18:03:33 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@
 # include <map>
 # include <sstream>
 # include <cstring>
-
-const int MAX_TOKENS = 100;
 
 class BitcoinExchange
 {
