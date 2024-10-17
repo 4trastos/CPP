@@ -6,7 +6,7 @@
 #    By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/17 12:47:54 by davgalle          #+#    #+#              #
-#    Updated: 2024/10/17 12:58:02 by davgalle         ###   ########.fr        #
+#    Updated: 2024/10/17 14:52:51 by davgalle         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -f
 
 SRC = main.cpp \
-	PmergeMecpp
+	PmergeMe.cpp
 
 OBJTS = $(SRC:.cpp=.o)
 
