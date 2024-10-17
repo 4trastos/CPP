@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 14:49:05 by davgalle          #+#    #+#             */
-/*   Updated: 2024/10/16 15:46:22 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/10/16 16:01:14 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,17 +95,21 @@ void	BitcoinExchange::OpenProntf(const std::string filename)
 		
 		std::string date = trim(tokens[0]);
 		std::string valueStr = trim(tokens[1]);
+		int				flag = 0;
 
-		if (!isValiDate(date))
+		if (!isValiDate(date, &flag))
 		{
-			std::cout << "Error: bad input => " << trimLine << std::endl;
+			if (flag == -1)
+				std::cout << "Error: This year is not a leap year => " << trimLine << std::endl;
+			else
+				std::cout << "Error: bad input => " << trimLine << std::endl;
 			continue;
 		}
 
 		if (!isPositiveNumber(valueStr))
 		{
 			float valuef = std::atof(valueStr.c_str());
-			if (valuef <= 0)
+			if (valuef < 0)
 				std::cout << "Error: not a positive number." << std::endl;
 			else
 				std::cout << "Error: bad input => " << trimLine << std::endl;
@@ -180,10 +184,14 @@ bool	BitcoinExchange::LoadExchangeRates(const std::string& ratesFile)
 
 		std::string date = trim(tokens[0]);
 		std::string valueStr = trim(tokens[1]);
+		int			flag = 0;
 
-		if (!isValiDate(date))
+		if (!isValiDate(date, &flag))
 		{
-			std::cout << "Error: bad input => " << trimmedLine << std::endl;
+			if (flag == -1)
+				std::cout << "This year is not a leap year" << std::endl;
+			else
+				std::cout << "Error: bad input => " << trimmedLine << std::endl;
 			continue;
 		}
 

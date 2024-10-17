@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 13:42:03 by davgalle          #+#    #+#             */
-/*   Updated: 2024/10/16 15:24:02 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/10/16 15:51:23 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ std::vector<std::string> split(const std::string& str, char delimiter)
     return tokens;
 }
 
-bool	isValiDate(std::string date)
+bool	isValiDate(std::string date, int *flag)
 {
 	bool isLeapYear = false;
 	
@@ -65,7 +65,10 @@ bool	isValiDate(std::string date)
 	if (isLeapYear && month == 2)
 		daysMonth[2] = 29;
 	if (day < 1 || day > daysMonth[month - 1])
+    {
+        *flag = -1;
 		return (false);
+    }
 	return (true);
 }
 
